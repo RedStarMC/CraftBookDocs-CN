@@ -23,12 +23,12 @@ Video Tutorial
 Configuration
 =============
 
-============== =================================================== ==============
-Node           Comment                                             Default
-============== =================================================== ==============
-item           The item for the ammeter tool.                      minecraft:coal
-use-action-bar Whether to use the action bar or the player's chat. true
-============== =================================================== ==============
+.. csv-table::
+  :header: Node, Comment, Default
+  :widths: 15, 30, 10
+
+  ``item``,"The item for the ammeter tool.","minecraft:coal"
+  ``use-action-bar``,"Whether to use the action bar or the player's chat.","true"
 
 Permissions
 ===========
