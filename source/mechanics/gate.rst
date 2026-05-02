@@ -36,6 +36,11 @@ By default CraftBook is designed to prevent duplicating blocks through its mecha
 
 To restock a gate, simply right click the sign with the blocks you want to restock it with. The gate will then be restocked with the blocks you have provided. If two signs are placed on directly opposite sides of the same block, they will share an inventory. This allows for easily keeping inventory between both sides of a gate.
 
+Infinite Gates
+~~~~~~~~~~~~~~
+
+You can also create gates with an infinite stockpile by entering ``infinite`` on the first line of the sign. This will automatically disappear on first usage, storing infinite blocks.
+
 Uses
 ====
 
@@ -74,12 +79,14 @@ Configuration
 Permissions
 ===========
 
-+-------------------------------+--------------------------------------------------------+
-|  Permission Node              |  Effect                                                |
-+===============================+========================================================+
-|  craftbook.gate.create        |  Allows the creation of gates.                         |
-+-------------------------------+--------------------------------------------------------+
-|  craftbook.gate.use           |  Allows the usage of gates.                            |
-+-------------------------------+--------------------------------------------------------+
-|  craftbook.gate.restock       |  Allows the user to restock gates.                     |
-+-------------------------------+--------------------------------------------------------+
++---------------------------------+--------------------------------------------------------+
+|  Permission Node                |  Effect                                                |
++=================================+========================================================+
+|  craftbook.gate.create          |  Allows the creation of gates.                         |
++---------------------------------+--------------------------------------------------------+
+|  craftbook.gate.create.infinite |  Allows the creation of gates with infinite stock.     |
++---------------------------------+--------------------------------------------------------+
+|  craftbook.gate.use             |  Allows the usage of gates.                            |
++---------------------------------+--------------------------------------------------------+
+|  craftbook.gate.restock         |  Allows the user to restock gates.                     |
++---------------------------------+--------------------------------------------------------+

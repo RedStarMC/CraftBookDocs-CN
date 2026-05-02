@@ -49,6 +49,11 @@ By default CraftBook is designed to prevent duplicating blocks through its mecha
 
 To restock a bridge, simply right click the sign with the blocks you want to restock it with. The bridge will then be restocked with the blocks you have provided. The inventories are shared between both ends of the bridge, so it doesn't matter which sign you restock.
 
+Infinite Bridges
+~~~~~~~~~~~~~~
+
+You can also create bridges with an infinite stockpile by entering ``infinite`` on the first line of the sign. This will automatically disappear on first usage, storing infinite blocks.
+
 Uses
 ====
 
@@ -78,12 +83,14 @@ Configuration
 Permissions
 ===========
 
-+---------------------------------+----------------------------------------------------------+
-|  Permission Node                |  Effect                                                  |
-+=================================+==========================================================+
-|  craftbook.bridge.create        |  Allows the creation of bridges.                         |
-+---------------------------------+----------------------------------------------------------+
-|  craftbook.bridge.use           |  Allows the usage of bridges.                            |
-+---------------------------------+----------------------------------------------------------+
-|  craftbook.bridge.restock       |  Allows the user to restock bridges.                     |
-+---------------------------------+----------------------------------------------------------+
++-----------------------------------+----------------------------------------------------------+
+|  Permission Node                  |  Effect                                                  |
++===================================+==========================================================+
+|  craftbook.bridge.create          |  Allows the creation of bridges.                         |
++-----------------------------------+----------------------------------------------------------+
+|  craftbook.bridge.create.infinite |  Allows the creation of bridges with infinite stock.     |
++-----------------------------------+----------------------------------------------------------+
+|  craftbook.bridge.use             |  Allows the usage of bridges.                            |
++-----------------------------------+----------------------------------------------------------+
+|  craftbook.bridge.restock         |  Allows the user to restock bridges.                     |
++-----------------------------------+----------------------------------------------------------+

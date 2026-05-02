@@ -47,6 +47,11 @@ By default CraftBook is designed to prevent duplicating blocks through its mecha
 
 To restock a door, simply right click the sign with the blocks you want to restock it with. The door will then be restocked with the blocks you have provided. The inventories are shared between both signs, so it doesn't matter which one you restock.
 
+Infinite Doors
+~~~~~~~~~~~~~~
+
+You can also create doors with an infinite stockpile by entering ``infinite`` on the first line of the sign. This will automatically disappear on first usage, storing infinite blocks.
+
 Uses
 ====
 
@@ -75,12 +80,14 @@ Configuration
 Permissions
 ===========
 
-+-------------------------------+--------------------------------------------------------+
-|  Permission Node              |  Effect                                                |
-+===============================+========================================================+
-|  craftbook.door.create        |  Allows the creation of doors.                         |
-+-------------------------------+--------------------------------------------------------+
-|  craftbook.door.use           |  Allows the usage of doors.                            |
-+-------------------------------+--------------------------------------------------------+
-|  craftbook.door.restock       |  Allows the user to restock doors.                     |
-+-------------------------------+--------------------------------------------------------+
++---------------------------------+--------------------------------------------------------+
+|  Permission Node                |  Effect                                                |
++=================================+========================================================+
+|  craftbook.door.create          |  Allows the creation of doors.                         |
++---------------------------------+--------------------------------------------------------+
+|  craftbook.door.create.infinite |  Allows the creation of doors with infinite stock.     |
++---------------------------------+--------------------------------------------------------+
+|  craftbook.door.use             |  Allows the usage of doors.                            |
++---------------------------------+--------------------------------------------------------+
+|  craftbook.door.restock         |  Allows the user to restock doors.                     |
++---------------------------------+--------------------------------------------------------+
