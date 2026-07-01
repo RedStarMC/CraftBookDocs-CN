@@ -1,7 +1,7 @@
 ===========
-Source Code
+源代码
 ===========
 
-You can find the source code to CraftBook `on GitHub <https://github.com/EngineHub/CraftBook>`_.
+你可以在 `GitHub <https://github.com/EngineHub/CraftBook>`_ 上找到 CraftBook 的源代码。
 
-CraftBook is open source. Contributions must be licensed under the GNU General Public License v3.
+CraftBook 是开源的。贡献的代码必须遵循 GNU General Public License v3 许可协议。

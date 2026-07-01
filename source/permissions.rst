@@ -1,8 +1,8 @@
 ===========
-Permissions
+权限
 ===========
 
-By default no features of CraftBook can be used, permission nodes need to be assigned in order to provide access to certain features.
-This page focuses on general CraftBook permissions, and not those of specific mechanics. For mechanic permissions, see :doc:`mechanics/index`.
+默认情况下，CraftBook 的任何功能都不可使用，需要分配权限节点才能访问特定功能。
+本页介绍的是 CraftBook 的通用权限，而不是特定机制的权限。有关机制权限，请参阅 :doc:`mechanics/index`。
 
-You can give the ``craftbook.*`` permission to give yourself and other administrators full access to CraftBook.
+你可以授予 ``craftbook.*`` 权限，以让自己和其他管理员获得 CraftBook 的完整访问权限。

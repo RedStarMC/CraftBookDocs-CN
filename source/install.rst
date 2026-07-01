@@ -1,33 +1,33 @@
 ============
-Installation
+安装
 ============
 
-Requirements
+需求
 ============
 
-CraftBook runs on the Java edition of Minecraft, on a dedicated server.
+CraftBook 运行在 Minecraft Java 版的专用服务器上。
 
-**CraftBook can’t be used on Realms, Windows 10, Bedrock, or Pocket Edition versions.** These versions of Minecraft have limited or no mod support. :(
+**CraftBook 不能在 Realms、Windows 10 版、Bedrock 版或 Pocket Edition 上使用。** 这些版本的 Minecraft 对模组的支持有限或完全不支持。:(
 
-Before you install CraftBook, you will first have to have a server that supports Paper plugins, such as Paper or one of its forks.
+在安装 CraftBook 之前，你首先需要有一个支持 Paper 插件的服务器，例如 Paper 或其分支。
 
-While you can use forks of Paper, we strongly recommend using `Paper itself <https://papermc.io/>`_ as many forks are known to be unstable and break plugins. See `here <https://madelinemiller.dev/blog/using-paper-forks/>`_ for further reasons to use Paper over its forks.
+虽然你可以使用 Paper 的分支，但我们强烈建议使用 `Paper 本身 <https://papermc.io/>`_，因为许多分支已知不稳定且会破坏插件。关于为什么使用 Paper 而非其分支的更多理由，请参见 `此处 <https://madelinemiller.dev/blog/using-paper-forks/>`_。
 
 .. note::
 
-     A now discontinued version of CraftBook is available that supports the `Sponge API <https://spongepowered.org/>`_, it can be found `here <https://ore.spongepowered.org/enginehub/CraftBook/>`_.
+     有一个现已停更的 CraftBook 版本支持 `Sponge API <https://spongepowered.org/>`_，可以在 `这里 <https://ore.spongepowered.org/enginehub/CraftBook/>`_ 找到。
 
-Installation
+安装
 ============
 
-CraftBook 5 can be `downloaded from the EngineHub Builds site <https://builds.enginehub.org/job/craftbook?branch=five>`_.
+CraftBook 5 可以从 `EngineHub 构建站点 <https://builds.enginehub.org/job/craftbook?branch=five>`_ 下载。
 
 .. note::
 
-    In the future, CraftBook 5 will be downloadable from Hangar, Paper's in-development plugin repository.
+     将来，CraftBook 5 将可以从 Hangar（Paper 正在开发的插件仓库）下载。
 
-1. In your server folder, create a "plugins" folder if one does not yet exist.
-2. Copy the CraftBook .jar file into the plugins folder. (Make sure you get WorldEdit as well!)
-3. Start your server.
+1. 在你的服务器文件夹中，如果还没有“plugins”文件夹，请创建一个。
+2. 将 CraftBook 的 .jar 文件复制到 plugins 文件夹中。（请确保你也下载了 WorldEdit！）
+3. 启动你的服务器。
 
-Check your server log for errors. If you encounter errors, see the :doc:`support` page.
+检查服务器日志是否有错误。如果遇到错误，请参阅 :doc:`support` 页面。

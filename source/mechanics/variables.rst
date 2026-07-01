@@ -1,156 +1,138 @@
 =========
-Variables
+变量 Variables
 =========
 
-The **Variables** mechanic allows for highly dynamic behaviour amongst CraftBook mechanisms. Variables are a core feature of
-CraftBook, and are incredibly powerful in that they can be used to make almost anything happen.
+**变量（Variables）** 机制为 CraftBook 机制提供了高度动态的行为能力。变量是 CraftBook 的核心功能之一，功能非常强大，几乎可以实现任何动态效果。
 
-Variables allow text substitutions to be set and read from signs, commands, or even chat. Change a variable, and you can
-dynamically change how a mechanic behaves without remaking the sign.
+变量允许在告示牌、命令甚至聊天中设置和读取文本替换。改变一个变量，你就可以动态地改变机制的行为，而无需重新制作告示牌。
 
-Usage
+使用方法
 =====
 
-A variable is basically a 'key-value store' that allows for a value to be assigned to a piece of text, or key.
+变量本质上是一个“键值存储”，允许为一段文本（即键）赋予一个值。
 
-The key can then be referenced on signs, in chat, or in commands, and will be swapped out for the value of the variable.
+然后可以在告示牌、聊天或命令中引用该键，它会被替换为变量的值。
 
-Namespaces
+命名空间 Namespaces
 ----------
 
-The variable key is made up of two segments. The namespace, and the key. The namespace is basically a "grouping",
-and allows variables to be sectioned off from each other for ease of use.
+变量键由两个部分组成：命名空间（namespace）和键（key）。命名空间本质上是一个“分组”，允许将变量彼此隔离，方便管理。
 
-When no namespace is provided, the default will be used. This can be changed in the configuration, but will either be
-the ``global`` namespace, or one tied to the player's UUID. If the global namespace is used, player's can all see each
-other's variables.
+当未提供命名空间时，将使用默认命名空间。这可以在配置中更改，默认要么是 ``global`` 命名空间，要么是与玩家 UUID 绑定的命名空间。如果使用全局命名空间，所有玩家都可以看到彼此的变量。
 
-Aside from making the variable listing neater, namespaces also allow fine-grained permission management of different
-sets of variables. For example, you could allow the people working on a single project access to the variable namespace
-related to that project.
+除了使变量列表更整洁之外，命名空间还允许对不同的变量集进行细粒度的权限管理。例如，你可以允许参与某个项目的成员访问与该项目相关的变量命名空间。
 
-Creating Variables
+创建变量
 ------------------
 
-Variables are initially created using the ``/var define`` command, noted in the commands section of this page.
+变量最初使用 ``/var define`` 命令创建，详见本页的命令部分。
 
-Variables must first be defined before they can be used.
+变量必须先定义才能使用。
 
-Syntax
+语法 Syntax
 ------
 
-The basic syntax to access a variable is ``%NAMESPACE|KEY%``, or if you are using the default namespace, Just
-``%KEY%`` can be used.
+访问变量的基本语法是 ``%命名空间|键%``，如果使用默认命名空间，则只需使用 ``%键%``。
 
-Any CraftBook mechanic that reads the sign, or any other plugin that uses the CraftBook API, will see the value of the
-variable rather than the text. If you had a variable called ``cakeType`` set to ``chocolate``, and a sign had
-``Cake: %cakeType%`` written on it, it would be read as ``Cake: chocolate``.
+任何读取告示牌的 CraftBook 机制，或任何使用 CraftBook API 的其他插件，都会看到变量的值而不是文本。如果你有一个名为 ``cakeType`` 的变量设为 ``chocolate``，而某告示牌上写着 ``Cake: %cakeType%``，它将被读取为 ``Cake: chocolate``。
 
-Variables in Chat and Commands
+聊天和命令中的变量
 ------------------------------
 
-When configured in the configuration, variables can be used in player chat, player commands, and even console commands.
+在配置中启用后，变量可以在玩家聊天、玩家命令甚至控制台命令中使用。
 
-This allows for variables to be used in vanilla Minecraft commands, or even commands of other plugins. On top of this,
-when allowed to be used in console commands, variables work inside Command Blocks. Variables can significantly enhance
-the capabilities of various command block contraptions.
+这使得变量可以在原版 Minecraft 命令甚至其他插件的命令中使用。此外，当允许在控制台命令中使用时，变量也能在命令方块中工作。变量可以显著增强各种命令方块装置的能力。
 
 .. warning::
-    This may interfere with some commands that make use of the % character. To get around this, you can use \\% in
-    place of any % character to prevent it being parsed as a variable.
+    这可能会干扰某些使用 ``%`` 字符的命令。要解决此问题，可以使用 ``\%`` 代替任何 ``%`` 字符，以防止其被解析为变量。
 
-Examples
+示例 Examples
 ========
 
-Mob Spawner
+刷怪笼 Mob Spawner
 -----------
 
-If you define a variable called ``MOB`` with the value ``cow``, then on a ``[MC1200]`` IC have ``%MOB%`` on the 3rd
-line, it would spawn cows. You could then have something modify the variable to be ``pig``, and it would switch to
-spawning pigs.
+如果你定义一个名为 ``MOB`` 的变量，值为 ``cow``，然后在 ``[MC1200]`` IC（集成电路）的第三行写上 ``%MOB%``，它就会生成牛。然后你可以将变量改为 ``pig``，它就会切换为生成猪。
 
-Expanding Trap
+扩展陷阱 Expanding Trap
 --------------
 
-Using the ``Entity Trap`` IC, you could create an expanding trap area by increasing a variable that controls the radius.
+使用 ``Entity Trap`` IC（实体陷阱集成电路），你可以通过增加一个控制半径的变量来创建可扩展的陷阱区域。
 
-Commands
+命令 Commands
 ========
 
 .. note::
-   These commands also require the player to have permission to interact with the variable they enter.
+   这些命令还要求玩家拥有操作其输入变量的权限。
 
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| Command                              | Flags          | Permission                  | Description                                                               |
+| 命令 Command                         | 标志 Flags     | 权限 Permission              | 描述 Description                                                          |
 +======================================+================+=============================+===========================================================================+
-| /var define <Variable> <Value>       | -n <namespace> | craftbook.variables.define  | Defines the variable with the specified value in the specified namespace. |
+| /var define <变量> <值>              | -n <命名空间>  | craftbook.variables.define  | 在指定命名空间中用指定的值定义变量。                                       |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| /var set <Variable> <Value>          | -n <namespace> | craftbook.variables.set     | Sets the variable to the specified value in the specified namespace.      |
+| /var set <变量> <值>                 | -n <命名空间>  | craftbook.variables.set     | 在指定命名空间中将变量设置为指定的值。                                     |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| /var get <Variable>                  | -n <namespace> | craftbook.variables.get     | Gets the value of the variable in the specified namespace.                |
+| /var get <变量>                      | -n <命名空间>  | craftbook.variables.get     | 获取指定命名空间中变量的值。                                               |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| /var remove <Variable>               | -n <namespace> | craftbook.variables.remove  | Removes the variable in the specified namespace.                          |
+| /var remove <变量>                   | -n <命名空间>  | craftbook.variables.remove  | 移除指定命名空间中的变量。                                                 |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| /var append <Variable> <Text>        | -n <namespace> | craftbook.variables.append  | Adds more text to the end of the variable.                                |
+| /var append <变量> <文本>            | -n <命名空间>  | craftbook.variables.append  | 在变量值末尾追加更多文本。                                                 |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| /var prepend <Variable> <Text>       | -n <namespace> | craftbook.variables.prepend | Adds more text to the beginning of the variable.                          |
+| /var prepend <变量> <文本>           | -n <命名空间>  | craftbook.variables.prepend | 在变量值开头插入更多文本。                                                 |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| /var toggle <Variable>               | -n <namespace> | craftbook.variables.toggle  | Toggles a boolean variable. Eg, 1 <-> 0, true <-> false, yes <-> no       |
+| /var toggle <变量>                   | -n <命名空间>  | craftbook.variables.toggle  | 切换布尔变量的值。例如：1 <-> 0，true <-> false，yes <-> no               |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
-| /var setexpr <Variable> <Expression> | -n <namespace> | craftbook.variables.setexpr | Adds the value to a numeric variable. This is basically +                 |
+| /var setexpr <变量> <表达式>         | -n <命名空间>  | craftbook.variables.setexpr | 对数值变量进行加法运算（相当于 +=）                                        |
 +--------------------------------------+----------------+-----------------------------+---------------------------------------------------------------------------+
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``default-to-global``,"Whether to default to global or the player's namespace when no namespace is provided","false"
-  ``enable-in-console``,"Allows variables to work when used in console commands","false"
-  ``enable-in-player-commands``,"Allows variables to work when used in player commands","false"
-  ``enable-in-player-chat``,"Allows variables to work when used in chat","false"
-  ``max-variable-length``,"The maximum length of a value in a variable","256"
+  ``default-to-global``,"未提供命名空间时，是否默认使用全局命名空间而非玩家个人命名空间","false"
+  ``enable-in-console``,"允许在控制台命令中使用变量","false"
+  ``enable-in-player-commands``,"允许在玩家命令中使用变量","false"
+  ``enable-in-player-chat``,"允许在聊天中使用变量","false"
+  ``max-variable-length``,"变量值的最大长度","256"
 
-Permissions
+权限 Permissions
 ===========
 
-Variable Specific
+变量特定权限 Variable Specific
 -----------------
 
-The following permission nodes allow you to specify how the player can use various variables.
+以下权限节点允许你指定玩家如何使用各种变量。
 
-These permission nodes can be narrowed down by adding ``.[namespace]`` on the end (where ``[namespace]`` is the namespace,
-eg ``.global`` for the global namespace), or by adding ``.self`` for their own personal UUID namespace.
+这些权限节点可以通过在末尾添加 ``.[命名空间]`` 来缩小范围（其中 ``[命名空间]`` 是命名空间名称，例如 ``.global`` 表示全局命名空间），或添加 ``.self`` 表示其个人的 UUID 命名空间。
 
-To further narrow down beyond the namespace, ``.[key]`` can be added after the namespace to specify permissions on a
-per-variable level.
+若要在命名空间基础上进一步缩小范围，可在命名空间后添加 ``.[键]`` 来指定对单个变量的权限。
 
-For example, to give a player the ability to only modify the variable ``test`` on the ``global`` namespace, provide them the
-permission ``craftbook.variables.modify.global.test``
+例如，要赋予玩家仅修改全局命名空间中 ``test`` 变量的权限，可授予其权限 ``craftbook.variables.modify.global.test``。
 
 +------------------------------+-----------------------------------------------------------+
-|  Permission Node             |  Effect                                                   |
+|  权限节点 Permission Node    |  效果 Effect                                              |
 +==============================+===========================================================+
-|  craftbook.variables.define  |  Allows the player to define variables.                   |
+|  craftbook.variables.define  |  允许玩家定义变量。                                        |
 +------------------------------+-----------------------------------------------------------+
-|  craftbook.variables.get     |  Allows the player to access the value of a variable.     |
+|  craftbook.variables.get     |  允许玩家访问变量的值。                                    |
 +------------------------------+-----------------------------------------------------------+
-|  craftbook.variables.remove  |  Allows the player to remove a variable.                  |
+|  craftbook.variables.remove  |  允许玩家移除变量。                                        |
 +------------------------------+-----------------------------------------------------------+
-|  craftbook.variables.modify  |  Allows the player to modify a variable.                  |
+|  craftbook.variables.modify  |  允许玩家修改变量。                                        |
 +------------------------------+-----------------------------------------------------------+
-|  craftbook.variables.use     |  Allows the player to use a variable.                     |
+|  craftbook.variables.use     |  允许玩家使用变量。                                        |
 +------------------------------+-----------------------------------------------------------+
 
-General Usage
+通用权限 General Usage
 -------------
 
 +--------------------------------+------------------------------------------------------------------------------+
-|  Permission Node               |  Effect                                                                      |
+|  权限节点 Permission Node      |  效果 Effect                                                                 |
 +================================+==============================================================================+
-|  craftbook.variables.chat      |  Allows the player to use variables in chat (when enabled in config).        |
+|  craftbook.variables.chat      |  允许玩家在聊天中使用变量（需在配置中启用）。                                  |
 +--------------------------------+------------------------------------------------------------------------------+
-|  craftbook.variables.commands  |  Allows the player to use variables in commands (when enabled in config).    |
+|  craftbook.variables.commands  |  允许玩家在命令中使用变量（需在配置中启用）。                                  |
 +--------------------------------+------------------------------------------------------------------------------+

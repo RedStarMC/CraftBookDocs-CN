@@ -1,44 +1,44 @@
 ===========
-Quick Start
+快速开始
 ===========
 
-Enabling Mechanics
+启用机制
 ==================
 
-All of CraftBook's features are disabled by default. This is to allow server owners the ability to customise CraftBook to do exactly what they want it to do.
+CraftBook 的所有功能默认都是禁用的。这是为了让服主能够根据自身需求定制 CraftBook 的功能。
 
-CraftBook's features are broken up into modules called **Mechanics**.
+CraftBook 的功能被划分成多个模块，称为**机制（Mechanics）**。
 
-You can enable or disable mechanics in the ``config.yml`` file (see :doc:`config`), or via in-game commands.
+你可以在 ``config.yml`` 文件中（参见 :doc:`config`）或通过游戏内命令启用或禁用机制。
 
-First, you should decide which mechanics you actually wish to enable. Check out :doc:`mechanics/index` for information on each Mechanic.
+首先，你应该决定实际想要启用哪些机制。请查看 :doc:`mechanics/index` 了解每种机制的信息。
 
-Via the configuration
+通过配置文件
 ---------------------
 
-* Open the ``plugins/CraftBook/config.yml`` file with your choice of text editor.
-* Set anything you want to enable to ``true``, under the ``mechanics`` section of the config.
-* Restart the server or run ``/cb reload``. (**DO NOT** use the ``/reload`` command. `Click here to see why. <https://madelinemiller.dev/blog/problem-with-reload/>`_)
+* 用你喜欢的文本编辑器打开 ``plugins/CraftBook/config.yml`` 文件。
+* 在配置的 ``mechanics`` 部分，将你想要启用的项目设置为 ``true``。
+* 重启服务器或运行 ``/cb reload``。**（不要**使用 ``/reload`` 命令。`点击此处了解原因。 <https://madelinemiller.dev/blog/problem-with-reload/>`_）
 
-Via commands
-------------
+通过命令
+-------------
 
-* Run ``/cb mech list`` to bring up a list of available mechanics.
-* Click the ``[Enable]`` or ``[Disable]`` buttons to enable or disable the mechanic.
-* You can also enable or disable mechanics directly with ``/cb mech enable mechanic_name`` or ``/cb mech disable mechanic_name``
+* 运行 ``/cb mech list`` 查看可用机制列表。
+* 点击 ``[Enable]`` 或 ``[Disable]`` 按钮来启用或禁用机制。
+* 你也可以直接使用 ``/cb mech enable 机制名称`` 或 ``/cb mech disable 机制名称`` 来启用或禁用机制。
 
 .. note::
 
-  Due to limitations in the Spigot/Paper platform, mechanics that have commands won't properly show completions until restarted if enabled while the server is running.
+  由于 Spigot/Paper 平台的限制，在服务器运行时启用带有命令的机制后，命令补全功能需要重启服务器才能正常显示。
 
-Configuring Mechanics
-=====================
+配置机制
+==================
 
-Many mechanics can be further configured. For more information on specific configuration options, check out that mechanic's page found :doc:`here <mechanics/index>`.
+许多机制可以进一步配置。有关具体配置选项的更多信息，请查看该机制的专属页面，详见 :doc:`这里 <mechanics/index>`。
 
-To configure these mechanics, find the ``CraftBook/mechanics`` folder. In this folder, you'll find the configuration files for each mechanic.
+要配置这些机制，请找到 ``CraftBook/mechanics`` 文件夹。在该文件夹中，你会找到每个机制的配置文件。
 
-Using Mechanics
-===============
+使用机制
+==================
 
-As each mechanic is used differently, the best point of reference is that mechanic's page found :doc:`here <mechanics/index>`.
+由于每种机制的使用方式不同，最佳参考是该机制的专属页面，详见 :doc:`这里 <mechanics/index>`。

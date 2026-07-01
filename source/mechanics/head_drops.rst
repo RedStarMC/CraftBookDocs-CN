@@ -1,27 +1,27 @@
 ==========
-Head Drops
+头颅掉落 Head Drops
 ==========
 
-The **Head Drops** mechanic allows players or mobs to drop their head at a configurable chance when killed.
+**头颅掉落（Head Drops）** 机制允许玩家或生物在被击杀时，以可配置的概率掉落其头颅。
 
-Video guide: https://www.youtube.com/watch?v=Lv74hI7mVGA
+视频指南：https://www.youtube.com/watch?v=Lv74hI7mVGA
 
-Usage
+使用方法
 =====
 
-To use, simply kill a supported mob or player. Chances of drops are configurable, and the effect of looting is also configurable.
+使用时，只需击杀一个受支持的生物或玩家即可。掉落概率可配置，抢夺（Looting）附魔的影响也可配置。
 
-By default, both players and mobs drop their heads, however this is also configurable.
+默认情况下，玩家和生物都会掉落头颅，但这也是可配置的。
 
-To limit head farming, it's possible to require a player to kill the entity in the configuration.
+为了限制头颅刷取，可以在配置中要求必须由玩家击杀该实体。
 
-Advanced Configuration
+高级配置
 ======================
 
-Per-Entity Type Drop Rates
+按实体类型单独设置掉率
 --------------------------
 
-If you want to fine-tune the drop rates per-mob, you can do this with the drop-rates section. For any entity listed here, the value will be used instead of the global drop rate. Looting still applies as normal.
+如果你想精细控制每种生物的掉率，可以使用 drop-rates 部分。对于此处列出的任何实体，将使用该值替代全局掉率。抢夺附魔仍然照常生效。
 
 .. code-block:: yaml
 
@@ -29,63 +29,60 @@ If you want to fine-tune the drop rates per-mob, you can do this with the drop-r
       pig: 0.5
       cow: 0.1
 
-Custom Mob Heads/Extra Mob Heads
+自定义生物头颅 / 额外生物头颅
 --------------------------------
 
-In the configuration it's possible to override or add skins. This is useful if you're running a modded server and want
-to add support for a modded mob, or use a resource pack and wish to override the skins to better suit.
+在配置中可以覆盖或添加皮肤。这对于运行模组服务器并希望为模组生物添加支持，或使用资源包并希望覆盖皮肤以更好适配的情况非常有用。
 
-This option requires a signed skin texture blob from Mojang. This is weird looking text after the "value" section of
-the Profile lookup endpoint.
+此选项需要来自 Mojang 的签名皮肤纹理 blob——这是在 Profile 查询端点的 "value" 部分之后的那段奇怪文本。
 
-To grab this value for a player, find their UUID and remove the '-' characters. At this point, go to the URL
-"https://sessionserver.mojang.com/session/minecraft/profile/UUID", replacing UUID with their UUID. From there you can
-see their skin data.
+要获取某玩家的此值，请找到其 UUID 并移除 '-' 字符。然后访问 URL
+"https://sessionserver.mojang.com/session/minecraft/profile/UUID"，将 UUID 替换为实际 UUID。在那里你可以看到其皮肤数据。
 
-For example, the URL of the profile "MHF_Enderman" is https://sessionserver.mojang.com/session/minecraft/profile/40ffb37212f64678b3f22176bf56dd4b.
+例如，档案 "MHF_Enderman" 的 URL 为 https://sessionserver.mojang.com/session/minecraft/profile/40ffb37212f64678b3f22176bf56dd4b。
 
-Using this example, the custom-skins section would be filled out as follows,
+以此为例，custom-skins 部分应填写如下：
 
 .. code-block:: yaml
 
     custom-skins:
       enderman: "ewogICJ0aW1lc3RhbXAiIDogMTYwNDU3ODQyNjM0NywKICAicHJvZmlsZUlkIiA6ICI0MGZmYjM3MjEyZjY0Njc4YjNmMjIxNzZiZjU2ZGQ0YiIsCiAgInByb2ZpbGVOYW1lIiA6ICJNSEZfRW5kZXJtYW4iLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWIwOWEzNzUyNTEwZTkxNGIwYmRjOTA5NmIzOTJiYjM1OWY3YThlOGE5NTY2YTAyZTdmNjZmYWZmOGQ2Zjg5ZSIKICAgIH0KICB9Cn0="
 
-Configuration
+配置
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``drop-mob-heads``,"Whether mobs should drop their heads when killed.","true"
-  ``drop-player-heads``,"Whether players should drop their heads when killed.","true"
-  ``require-player-killer``,"Only drop heads when killed by a player. (Allows requiring permission)","true"
-  ``override-natural-head-drops``,"Override natural head drops, this will cause natural head drops to use the chances provided by CraftBook. (Eg, Wither Skeleton Heads)","false"
-  ``drop-rate``,"A value between 1 and 0 which dictates the global chance of heads being dropped. This can be overridden per-entity type.","0.05"
-  ``looting-rate-modifier``,"This amount is added to the chance for every looting level on an item. Eg, a chance of 0.05(5%) and a looting mod of 0.05(5%) on a looting 3 sword, would give a 0.20 chance (20%).","0.05"
-  ``show-name-right-click``,"When enabled, right clicking a placed head will say the owner of the head.","true"
-  ``drop-rates``,"A list of custom drop rates for different mobs",""
-  ``custom-skins``,"A list of custom skins for different mobs",""
+  ``drop-mob-heads``,"是否让生物在被击杀时掉落头颅。","true"
+  ``drop-player-heads``,"是否让玩家在被击杀时掉落头颅。","true"
+  ``require-player-killer``,"仅当被玩家击杀时才掉落头颅。（可配合权限使用）","true"
+  ``override-natural-head-drops``,"覆盖原版头颅掉落，使原版头颅掉落使用 CraftBook 提供的概率（例如，凋灵骷髅头颅）。","false"
+  ``drop-rate``,"0~1 之间的值，表示全局掉率。可按实体类型覆盖。","0.05"
+  ``looting-rate-modifier``,"每级抢夺附魔增加的概率。例如，基础概率 0.05（5%），抢夺修正 0.05（5%），抢夺 III 时总概率为 0.20（20%）。","0.05"
+  ``show-name-right-click``,"启用后，右键点击已放置的头颅会显示其所有者名称。","true"
+  ``drop-rates``,"不同生物的自定义掉率列表",""
+  ``custom-skins``,"不同生物的自定义皮肤列表",""
 
 
-Permissions
+权限 Permissions
 ===========
 
 +-----------------------------+--------------------------------------------------------------------+
-|  Permission Node            |  Effect                                                            |
+|  权限节点 Permission Node   |  效果 Effect                                                       |
 +=============================+====================================================================+
-|  craftbook.headdrops.drops  |  Allows the player to receive head drops as loot.                  |
+|  craftbook.headdrops.drops  |  允许玩家获得头颅掉落物。                                          |
 +-----------------------------+--------------------------------------------------------------------+
 
-Commands
+命令 Commands
 ========
 .. contents::
     :local:
 
 .. note::
 
-    Arguments enclosed in ``[ ]`` are optional, those enclosed in ``< >`` are required.
+    用 ``[ ]`` 括起来的参数为可选，用 ``< >`` 括起来的为必需。
 
 HeadDrops
 ~~~~~~~~~
@@ -99,8 +96,8 @@ HeadDrops
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/headdrops <give>``"
-        **Description**,"CraftBook HeadDrops Commands"
+        **用法 Usage**,"``/headdrops <give>``"
+        **描述 Description**,"CraftBook 头颅掉落命令"
 
 .. raw:: html
 
@@ -112,11 +109,10 @@ HeadDrops
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/headdrops give [-s] <piston.argument.Entity Type> [-p <piston.argument.otherPlayer>] [-a <piston.argument.amount>]``"
-          ``[-a <piston.argument.amount>]``,"Amount to give"
-        **Description**,"Gives the player the headdrops item."
-        **Permissions**,"``craftbook.headdrops.give``"
-          ``<piston.argument.Entity Type>``,"The entity type to spawn the head of"
-          ``[-p <piston.argument.otherPlayer>]``,"The player to target"
-          ``[-s]``,"Silence output"
-
+        **用法 Usage**,"``/headdrops give [-s] <piston.argument.Entity Type> [-p <piston.argument.otherPlayer>] [-a <piston.argument.amount>]``"
+          ``[-a <piston.argument.amount>]``,"给予数量"
+        **描述 Description**,"给予玩家头颅掉落物品。"
+        **权限 Permissions**,"``craftbook.headdrops.give``"
+          ``<piston.argument.Entity Type>``,"要生成头颅的实体类型"
+          ``[-p <piston.argument.otherPlayer>]``,"目标玩家"
+          ``[-s]``,"静默输出"

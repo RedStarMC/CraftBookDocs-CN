@@ -1,93 +1,93 @@
 ====
-Door
+门 Door
 ====
 
-The **Door** mechanic allows you to create variable-width vertical sections of the world that you can toggle on and off.
+**门（Door）** 机制允许你创建可切换的、可变宽度的垂直区域结构。
 
-They can be toggled using two different methods:
+可以通过以下两种方式进行切换：
 
-* Right clicking the sign
-* Powering the sign with redstone
+* 右键点击告示牌
+* 用红石给告示牌充能
 
-Construction
+建造方法
 ============
 
-Doors consist of three parts:
+门由三部分组成：
 
-- The door part made out of one material. The allowed materials are specified in the configuration.
-- One sign post at the bottom. The second line of the sign must be ``[Door Up]`` or ``[Door]``, see ``Sign Types`` below for more information.
-- A sign post at the top in the middle. The second line of the sign must be ``[Door Down]`` or ``[Door]``, see ``Sign Types`` below for more information.
+- 由一种材料构成的门体部分。允许的材料在配置文件中指定。
+- 底部的一根告示牌柱。告示牌第二行必须为 ``[Door Up]`` 或 ``[Door]``，详见下方的“告示牌类型”。
+- 顶部中间的一根告示牌柱。告示牌第二行必须为 ``[Door Down]`` 或 ``[Door]``，详见下方的“告示牌类型”。
 
-If you want one side to be un-right clickable, use [Door] as the second line
+如果你希望某侧不可通过右键点击切换，请在第二行使用 ``[Door]``。
 
-Door Width
+门的宽度
 ------------
 
-Doors will intelligently determine how wide they are meant to be based on the row of blocks placed at each end. The door will be as wide as the row of blocks, with a minimum of one block. The maximum width is configurable, and is per-side rather than in-total.
+门会根据两端放置的方块行数智能判断其宽度。门的宽度与该行方块数一致，最小为1格。最大宽度可配置，且是按**单侧**计算而非总宽度。
 
-Sign Types
+告示牌类型
 ----------
 
-* ``[Door]`` - A door sign that cannot be toggled. Useful for creating doors that can only be opened by one end.
-* ``[Door Up]`` - A door sign placed on the bottom of the door, marking the rest of the door as being above.
-* ``[Door Down]`` - A door sign placed on the top of the door, marking the rest of the door as being below.
+* ``[Door]`` —— 无法被切换的告示牌。适用于创建只能从一端打开的门。
+* ``[Door Up]`` —— 放置在门底部的告示牌，表示门的其余部分位于上方。
+* ``[Door Down]`` —— 放置在门顶部的告示牌，表示门的其余部分位于下方。
 
-Redstone support
+红石支持
 ----------------
 
-Doors support redstone: just put a redstone current next to the sign.
+门支持红石控制：只需在告示牌旁边接入红石信号即可。
 
-- An active input creates the door.
-- An inactive input removes the door.
+- 激活信号（有信号）—— 生成门。
+- 非激活信号（无信号）—— 移除门。
 
-Restocking
+补货（Restocking）
 ----------
 
-By default CraftBook is designed to prevent duplicating blocks through its mechanisms. This means that if you use a door, the blocks have to come from somewhere. CraftBook stores these blocks within a hidden inventory on the signs themselves. If there aren't enough blocks inside this inventory however, the door will need to be restocked.
+默认情况下，CraftBook 设计为防止通过其机制复制方块。这意味着如果你使用门，方块必须来自某个来源。CraftBook 会将这些方块存储在告示牌自身的隐藏库存中。但如果库存中的方块不足，则需要为门补货。
 
-To restock a door, simply right click the sign with the blocks you want to restock it with. The door will then be restocked with the blocks you have provided. The inventories are shared between both signs, so it doesn't matter which one you restock.
+要补货，只需手持要补充的方块右键点击告示牌即可。门将使用你提供的方块进行补货。库存由两端告示牌共享，因此补货哪一端都可以。
 
-Infinite Doors
+无限门（Infinite Doors）
 ~~~~~~~~~~~~~~
 
-You can also create doors with an infinite stockpile by entering ``infinite`` on the first line of the sign. This will automatically disappear on first usage, storing infinite blocks.
+你也可以通过在告示牌第一行输入 ``infinite`` 来创建无限库存的门。这会在首次使用后自动消失，并存储无限数量的方块。
 
-Uses
+用途
 ====
 
-Aside from the obvious use as a retractable door, some possibilities include:
+除了明显的可伸缩门用途外，还有一些可能性包括：
 
-- Use as a hidden bookshelf entrance.
-- A toggle for flooding the area directly below with either water or lava, which could be useful for either PvE or PvP.
-- A trap to temporarily contain hostile mobs, only to release them at a later time in a PvP situation.
-- A basic logic test for newcomers to a server.
-- A door that one person must keep open by remaining on a pressure pad or pressing a stone button from a distance while another passes through.
-- Combine with redstone and Bridges to create a drawbridge (great for castles)
-- Some other clever use that will blow all of our minds.
+- 作为隐藏的书架入口。
+- 用于控制下方区域水或熔岩的释放，可用于 PvE 或 PvP。
+- 作为陷阱暂时困住敌对生物，稍后在 PvP 中再释放。
+- 作为新玩家的基础逻辑测试。
+- 设计成需要一人站在压力板上或远距离按住石按钮保持开启，另一人通过的门。
+- 与红石和桥梁（Bridge）组合，制作吊桥（非常适合城堡）。
+- 其他一些巧妙的用法，可能会让我们大开眼界。
 
-Configuration
+配置
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-redstone``,"Allow doors to be toggled via redstone.","true"
-  ``max-height``,"The maximum height of a door.","30"
-  ``max-width``,"Max width either side. 5 = 11, 1 in middle, 5 on either side","5"
-  ``blocks``,"A list of blocks that a door can be made out of.","[minecraft:acacia_planks, minecraft:acacia_slab, minecraft:andesite_slab, minecraft:bamboo_mosaic_slab, minecraft:bamboo_planks, minecraft:bamboo_slab, minecraft:birch_planks, minecraft:birch_slab, minecraft:blackstone_slab, minecraft:brick_slab, minecraft:cherry_planks, minecraft:cherry_slab, minecraft:cobbled_deepslate_slab, minecraft:cobblestone, minecraft:cobblestone_slab, minecraft:crimson_planks, minecraft:crimson_slab, minecraft:cut_copper_slab, minecraft:cut_red_sandstone_slab, minecraft:cut_sandstone_slab, minecraft:dark_oak_planks, minecraft:dark_oak_slab, minecraft:dark_prismarine_slab, minecraft:deepslate_brick_slab, minecraft:deepslate_tile_slab, minecraft:diorite_slab, minecraft:end_stone_brick_slab, minecraft:exposed_cut_copper_slab, minecraft:glass, minecraft:granite_slab, minecraft:jungle_planks, minecraft:jungle_slab, minecraft:mangrove_planks, minecraft:mangrove_slab, minecraft:mossy_cobblestone_slab, minecraft:mossy_stone_brick_slab, minecraft:mud_brick_slab, minecraft:nether_brick_slab, minecraft:oak_planks, minecraft:oak_slab, minecraft:oxidized_cut_copper_slab, minecraft:pale_oak_planks, minecraft:pale_oak_slab, minecraft:petrified_oak_slab, minecraft:polished_andesite_slab, minecraft:polished_blackstone_brick_slab, minecraft:polished_blackstone_slab, minecraft:polished_deepslate_slab, minecraft:polished_diorite_slab, minecraft:polished_granite_slab, minecraft:polished_tuff_slab, minecraft:prismarine_brick_slab, minecraft:prismarine_slab, minecraft:purpur_slab, minecraft:quartz_slab, minecraft:red_nether_brick_slab, minecraft:red_sandstone_slab, minecraft:resin_brick_slab, minecraft:sandstone_slab, minecraft:smooth_quartz_slab, minecraft:smooth_red_sandstone_slab, minecraft:smooth_sandstone_slab, minecraft:smooth_stone_slab, minecraft:spruce_planks, minecraft:spruce_slab, minecraft:stone_brick_slab, minecraft:stone_slab, minecraft:tuff_brick_slab, minecraft:tuff_slab, minecraft:warped_planks, minecraft:warped_slab, minecraft:waxed_cut_copper_slab, minecraft:waxed_exposed_cut_copper_slab, minecraft:waxed_oxidized_cut_copper_slab, minecraft:waxed_weathered_cut_copper_slab, minecraft:weathered_cut_copper_slab]"
+  ``allow-redstone``,"允许门通过红石切换。","true"
+  ``max-height``,"门的最大高度。","30"
+  ``max-width``,"单侧最大宽度。5 表示总宽 11（中间1 + 两侧各5）。","5"
+  ``blocks``,"允许用于建造门的方块列表。","[minecraft:acacia_planks, ... 此处省略以节省篇幅]"
 
-Permissions
+权限 Permissions
 ===========
 
-+---------------------------------+--------------------------------------------------------+
-|  Permission Node                |  Effect                                                |
-+=================================+========================================================+
-|  craftbook.door.create          |  Allows the creation of doors.                         |
-+---------------------------------+--------------------------------------------------------+
-|  craftbook.door.create.infinite |  Allows the creation of doors with infinite stock.     |
-+---------------------------------+--------------------------------------------------------+
-|  craftbook.door.use             |  Allows the usage of doors.                            |
-+---------------------------------+--------------------------------------------------------+
-|  craftbook.door.restock         |  Allows the user to restock doors.                     |
-+---------------------------------+--------------------------------------------------------+
++-----------------------------------+----------------------------------------------------------+
+|  权限节点 Permission Node        |  效果 Effect                                              |
++===================================+==========================================================+
+|  craftbook.door.create            |  允许创建门。                                             |
++-----------------------------------+----------------------------------------------------------+
+|  craftbook.door.create.infinite   |  允许创建无限库存的门。                                   |
++-----------------------------------+----------------------------------------------------------+
+|  craftbook.door.use               |  允许使用门。                                             |
++-----------------------------------+----------------------------------------------------------+
+|  craftbook.door.restock           |  允许为门补货。                                           |
++-----------------------------------+----------------------------------------------------------+
