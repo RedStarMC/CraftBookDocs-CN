@@ -1,8 +1,8 @@
 ==============
-Boat Mechanics
+船机制 Boat Mechanics
 ==============
 
-The following mechanics are boat related.
+以下机制与船相关。
 
 .. toctree::
     :maxdepth: 3

@@ -1,7 +1,7 @@
 ====================
-Minecart Rail Placer
+铺轨车 Minecart Rail Placer
 ====================
 
-The **Minecart Rail Placer** mechanic causes Minecarts with inventories, such as chest or hopper carts, to place missing rails in front of them.
+**铺轨车（Minecart Rail Placer）** 机制使带有物品栏的矿车（如箱子矿车或漏斗矿车）自动在其前方放置缺失的铁轨。
 
-This is useful for placing long stretches of rail, as the Minecart can can do the work for you.
+这对于铺设长距离铁轨非常有用，因为矿车可以为你完成这项工作。

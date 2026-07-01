@@ -1,18 +1,18 @@
 ==================
-Boat Impact Damage
+撞船伤害 Boat Impact Damage
 ==================
 
-The **Boat Impact Damage** mechanic causes boats to damage other entities on collision. Upon collision, the entities are pushed in the direction of the boat and dealt damage.
+**撞船伤害（Boat Impact Damage）** 机制使船在碰撞时对其他实体造成伤害。碰撞时，实体会被推向船的方向并受到伤害。
 
 .. note::
 
-  Due to limitations with Minecraft, the damage and knockback cannot be scaled based on the speed of the boat.
+  由于 Minecraft 的限制，伤害和击退效果无法根据船的速度进行调整。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``remove-other-boats``,"Allows boats to remove other boats on impact.","false"
+  ``remove-other-boats``,"允许船在碰撞时移除其他船只。","false"

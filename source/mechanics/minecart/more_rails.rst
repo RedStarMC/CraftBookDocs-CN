@@ -1,26 +1,26 @@
 ==========
-More Rails
+更多铁轨 More Rails
 ==========
 
-The **More Rails** mechanic adds new rail types through the use of other blocks.
+**更多铁轨（More Rails）** 机制通过使用其他方块来增加新的铁轨类型。
 
-4-Way Intersections
+4岔铁道 4-Way Intersections
 ===================
 
-The 4-Way Intersection feature allows creating minecart intersections using pressure plates. When a minecart runs over a pressure plate, it will be given a continuous speed boost so that they don't come to a stop.
+4岔铁道功能允许使用压力板创建矿车岔道。当矿车驶过压力板时，会获得持续的加速效果，使其不会停下来。
 
-Vertical Rails
+垂直铁轨 Vertical Rails
 ==============
 
-The Vertical Rails feature allows creating minecart tracks that travel upwards using ladders or vines. When a minecart runs into these blocks, it will be propelled upwards.
+垂直铁轨功能允许使用梯子或藤蔓创建垂直向上的矿车轨道。当矿车撞上这些方块时，会向上行驶。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``pressure-plate-intersection``,"Allows use of pressure plates as rail intersections.","true"
-  ``ladder-vertical-rail``,"Allows use of ladders and vines as a vertical rail.","true"
-  ``ladder-vertical-rail-velocity``,"Sets the velocity applied to the minecart on vertical rails.","0.1"
+  ``pressure-plate-intersection``,"允许使用压力板作为铁轨交叉口。","true"
+  ``ladder-vertical-rail``,"允许使用梯子和藤蔓作为垂直铁轨。","true"
+  ``ladder-vertical-rail-velocity``,"设置垂直铁轨上矿车的速度。","0.1"

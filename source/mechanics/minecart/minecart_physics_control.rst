@@ -1,54 +1,54 @@
 ========================
-Minecart Physics Control
+矿车物理控制 Minecart Physics Control
 ========================
 
-The **Minecart Physics Control** mechanic allows you to control various fine-grained aspects of Minecart physics.
+**矿车物理控制（Minecart Physics Control）** 机制允许你控制矿车物理的各个精细方面。
 
-Empty Slowdown
+空车减速 Empty Slowdown
 ==============
 
-By default in Minecraft, empty minecarts slow faster than occupied minecarts. This can be disabled with the ``slow-when-empty`` configuration option.
+在 Minecraft 原版中，空矿车比载人矿车减速更快。这可以通过 ``slow-when-empty`` 配置选项禁用。
 
-Fall Speed
+下落速度 Fall Speed
 ==========
 
-The ``vertical-fall-speed`` and ``horizontal-fall-speed`` options allow configuring the vertical and horizontal velocities applied to falling minecarts.
+``vertical-fall-speed`` 和 ``horizontal-fall-speed`` 选项允许配置下落矿车的垂直和水平速度。
 
-This can be used to create carts that fall much quicker downwards than forwards, or minecarts that fall slower for more airtime. A common usecase is to create minecart rollercoasters.
+这可以用于创建下落速度远快于前进速度的矿车，或下落更慢以获得更长滞空时间的矿车。一个常见的用途是创建矿车过山车。
 
-This can be disabled and set to the Minecraft default by using ``-1`` as the speed.
+使用 ``-1`` 作为速度值可以禁用此功能并恢复为 Minecraft 默认值。
 
 .. note::
 
-  Both the vertical and horizontal speeds must be set (not ``-1``) for this to take affect.
+  垂直和水平速度都必须设置（不能为 ``-1``）此功能才能生效。
 
-Max Speed
+最大速度 Max Speed
 =========
 
-The ``max-speed`` option allows configuring the maximum speed that a Minecart can reach.
+``max-speed`` 选项允许配置矿车可以达到的最大速度。
 
-This can be disabled and set to the Minecraft default of 0.4 by using ``-1`` as the speed.
+使用 ``-1`` 作为速度值可以禁用此功能并恢复为 Minecraft 默认值 0.4。
 
 .. note::
 
-  Minecarts can become unstable when going around corners at very high speeds.
+  矿车在高速过弯时可能会变得不稳定。
 
-Off Rail Speed
+脱轨速度 Off Rail Speed
 ==============
 
-The ``off-rail-speed`` option allows tweaking the speed at which minecarts travel when moving along blocks that aren't rails.
+``off-rail-speed`` 选项允许调整矿车在非铁轨方块上行驶时的速度。
 
-This can be disabled and set to the Minecart default by using ``-1`` as the speed.
+使用 ``-1`` 作为速度值可以禁用此功能并恢复为矿车默认值。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``slow-when-empty``,"Whether Minecarts should slow faster when empty","true"
-  ``vertical-fall-speed``,"Sets the vertical fall speed of the minecart","-1.0"
-  ``horizontal-fall-speed``,"Sets the horizontal fall speed of the minecart","-1.0"
-  ``max-speed``,"Sets the max speed modifier of carts. Normal Minecraft speed is 0.4","-1.0"
-  ``off-rail-speed``,"Sets the off-rail speed modifier of carts","-1.0"
+  ``slow-when-empty``,"矿车是否应在空载时减速更快","true"
+  ``vertical-fall-speed``,"设置矿车的垂直下落速度","-1.0"
+  ``horizontal-fall-speed``,"设置矿车的水平下落速度","-1.0"
+  ``max-speed``,"设置矿车的最大速度修正值。Minecraft 正常速度为 0.4","-1.0"
+  ``off-rail-speed``,"设置矿车的脱轨速度修正值","-1.0"
