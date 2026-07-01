@@ -1,60 +1,60 @@
 ===========
-Cooking Pot
+烹饪锅 Cooking Pot
 ===========
 
-The **Cooking Pot** mechanic allows you to create cooking pots to bulk-cook food, and optionally ores and other smeltable items.
+**烹饪锅（Cooking Pot）** 机制允许你创建烹饪锅来批量烹饪食物，并可选择烹饪矿石和其他可烧炼物品。
 
-Construction
+建造方法
 ============
 
-Cooking Pots consist of three parts:
+烹饪锅由三部分组成：
 
-1. A block to burn, with a [Cook] sign on it. (Netherrack or Soul Soil recommended, for continued operation)
-2. A fire on the block with the sign on it.
-3. A chest, to cook inside. (Note: only standard chests will work)
+1. 一个用于燃烧的方块，上面带有 ``[Cook]`` 告示牌（推荐使用地狱岩或灵魂土，以持续燃烧）。
+2. 在带有告示牌的方块上点火。
+3. 一个用于烹饪的箱子（注意：只有普通箱子可以工作）。
 
-Placing raw ingredients into the cooking pot will cause it to cook them. The cooking pot can be configured to work only on foods, or to work on all smeltable items.
+将生食材放入烹饪锅会使其烹饪它们。烹饪锅可以配置为仅对食物有效，或对所有可烧炼物品有效。
 
-It is possible to open the chest by right clicking the sign even if the chest is obstructed, therefore making it possible to put blocks over the top of the chest.
+即使箱子被挡住，也可以通过右键点击告示牌打开箱子，因此可以在箱子顶部放置方块。
 
-Fuel
+燃料 Fuel
 ----
 
-The cooking pot can be configured to require fuel. Even in the case that fuel isn't required, it can still speed up the cooking process.
+烹饪锅可以配置为需要燃料。即使不需要燃料，燃料仍然可以加速烹饪过程。
 
-To refuel the mechanic, right click the sign with a fuel source.
+要补充燃料，手持燃料源右键点击告示牌即可。
 
 .. note::
 
-   Due to limitations in the Bukkit API, not all furnace fuels are usable. Usable fuels include types of coal and coal blocks, blaze rods, blaze dust, as well as buckets of lava.
+   由于 Bukkit API 的限制，并非所有熔炉燃料都可用。可用的燃料包括煤炭和煤炭块、烈焰棒、烈焰粉以及熔岩桶。
 
-Redstone
+红石 Redstone
 --------
 
-If enabled in the configuration, it is possible fuel the cooking pot with a pulsing redstone signal. For each power level of redstone, the cooking pot will gain 1 fuel point. This is not recommended in economy-heavy servers given it allows cooking items easily without the use of fuel.
+如果配置中启用，可以通过脉冲红石信号为烹饪锅提供燃料。红石的每级信号强度都会为烹饪锅增加 1 点燃料值。这在不依赖经济体系的服务器上不推荐使用，因为它可以轻松地烹饪物品而无需消耗燃料。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-redstone``,"Allows for redstone to be used as a fuel source.","false"
-  ``require-fuel``,"Require fuel to cook.","true"
-  ``allow-smelting``,"Allows the cooking pot to cook ores and other smeltable items.","false"
-  ``sign-click-open``,"When enabled, right clicking the [Cook] sign will open the cooking pot.","true"
-  ``progress-per-fuel``,"How much the current smelt progress increases per unit of fuel (line 4). Decreases fuel per cooked item and increases cooking speed.","2"
-  ``fuel-per-tick``,"How many fuel units (line 4) are used per tick. Increases cooking speed.","5"
-  ``empty-cooldown``,"Put the cooking pot in a "low power" mode while the chest is empty. Useful for low-performance machines or overloaded servers.","false"
+  ``allow-redstone``,"允许红石作为燃料来源。","false"
+  ``require-fuel``,"需要燃料才能烹饪。","true"
+  ``allow-smelting``,"允许烹饪锅烹饪矿石和其他可烧炼物品。","false"
+  ``sign-click-open``,"启用时，右键点击 [Cook] 告示牌会打开烹饪锅。","true"
+  ``progress-per-fuel``,"每单位燃料（第4行）增加当前烧炼进度的量。减少每件物品的燃料消耗并提高烹饪速度。","2"
+  ``fuel-per-tick``,"每 tick 消耗的燃料单位数（第4行）。提高烹饪速度。","5"
+  ``empty-cooldown``,"当箱子为空时，将烹饪锅置于“低功耗”模式。适用于性能较低的机器或负载过重的服务器。","false"
 
 
-Permissions
+权限 Permissions
 ===========
 
 ============================ ======================================
-Node                         Description
+权限节点 Permission Node       描述 Description
 ============================ ======================================
-craftbook.cookingpot.create  Allows the user to create Cooking Pots
-craftbook.cookingpot.refuel  Allows the user to refuel Cooking Pots
+craftbook.cookingpot.create  允许用户创建烹饪锅
+craftbook.cookingpot.refuel  允许用户为烹饪锅补充燃料
 ============================ ======================================

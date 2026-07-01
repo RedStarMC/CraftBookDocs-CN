@@ -1,38 +1,36 @@
 ============
-Chunk Anchor
+区块锚点 Chunk Anchor
 ============
 
-The **Chunk Anchor** mechanic allows forcing a Chunk to remain loaded. Chunk Anchors will not automatically load chunks
-on server startup, but instead prevent them from unloading once loaded initially.
+**区块锚点（Chunk Anchor）** 机制允许强制保持一个区块处于加载状态。区块锚点不会在服务器启动时自动加载区块，而是在区块首次被加载后阻止其卸载。
 
 .. note::
-  Some plugins incorrectly force chunks to unload, preventing Chunk Anchors from working correctly.
+  某些插件会强制卸载区块，从而阻止区块锚点正常工作。
 
-Construction
+建造方法
 ============
 
-Place a sign with ``[Chunk]`` on the second line. This chunk will no longer unload naturally.
+放置一个第二行为 ``[Chunk]`` 的告示牌。该区块将不再自然卸载。
 
-Redstone Toggle
+红石切换 Redstone Toggle
 ---------------
 
-If configured to allow this, chunk anchor can be toggled on or off with redstone. When the chunk anchor is off, ``OFF``
-will be visible on the last line of the sign. In an ``OFF`` state, chunks will continue to unload as normal.
+如果配置允许，区块锚点可以通过红石信号切换开启或关闭。当区块锚点关闭时，告示牌最后一行会显示 ``OFF``。在 ``OFF`` 状态下，区块将照常卸载。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``redstone-toggle``,"Allow Chunk Anchors to be turned on and off with redstone.","true"
+  ``redstone-toggle``,"允许通过红石开启和关闭区块锚点。","true"
 
-Permissions
+权限 Permissions
 ===========
 
 ============================ ===================================
-Node                         Description
+权限节点 Permission Node       描述 Description
 ============================ ===================================
-craftbook.chunkanchor.create Allows creation of the Chunk Anchor
+craftbook.chunkanchor.create 允许创建区块锚点
 ============================ ===================================

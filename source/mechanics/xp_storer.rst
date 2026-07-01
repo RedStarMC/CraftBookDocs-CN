@@ -1,74 +1,68 @@
 =========
-XP Storer
+经验存储器 XP Storer
 =========
 
-The **XP Storer** mechanic allows a player to convert their XP into bottles of enchanting.
+**经验存储器（XP Storer）** 机制允许玩家将他们的经验值转化为附魔之瓶。
 
-Construction
+建造方法
 ============
 
-The XP Storer mechanic is represented by a block. By default, the spawner block.
+经验存储器机制由一个方块表示，默认情况下是刷怪笼方块。
 
-Ranged Mode
+范围模式 Ranged Mode
 -----------
 
-Ranged Mode allows the XP Storer to collect nearby Experience Orbs automatically. This mode requires a sign attached to the block, with ``[XP]`` on
-the second line. On the third line, the range may be supplied. This range is spherical, and limited by an option in the configuration.
+范围模式允许经验存储器自动收集附近的经验球。此模式需要在方块上附着告示牌，第二行为 ``[XP]``。第三行可填写范围值。该范围为球形，受配置中的选项限制。
 
-If the XP Storer requires bottles, they can be placed in a chest on top of the block. The resulting XP Bottles will end up in the chest as well, if they fit.
+如果经验存储器需要玻璃瓶，可以将它们放在方块顶部的箱子中。生成的附魔之瓶如果装得下，也会出现在该箱子中。
 
-Usage
+使用方法
 =====
 
-On right click, the block will drop the players XP in the form of XP Bottles.
+右键点击该方块，方块会以附魔之瓶的形式掉落玩家的经验值。
 
-It's possible to configure CraftBook to either require sneaking, not allow sneaking, and to allow XP bottles in the offhand.
+可以配置 CraftBook 以要求潜行、不允许潜行，或允许在副手持有经验瓶。
 
-Tweaking XP Output
+调整经验输出 Tweaking XP Output
 ==================
 
-Using the ``bottle-xp-requirement`` option, it's possible to change how much XP is used up per bottle creation. By
-default, the amount will on average produce roughly equal output.
+使用 ``bottle-xp-requirement`` 选项，可以更改每制作一瓶经验瓶消耗的经验值数量。默认情况下，该数量平均会产生大致相等的输出。
 
-Overriding output XP
+覆盖输出经验 Overriding output XP
 --------------------
 
-It's also possible to disable the Minecraft XP algorithm when the XP bottle is broken, and instead output a fixed
-amount of XP. This is useful if you want stored bottles to always output the amount that was put in, or you want to
-define a non-random loss.
+也可以禁用 Minecraft 的经验瓶破碎时的经验算法，改为输出固定数量的经验值。如果你希望存储的瓶子始终输出存入时的数量，或者你想自定义一个非随机的损耗，这会很有用。
 
-Overriding output item
+覆盖输出物品 Overriding output item
 ----------------------
 
-If you want to add custom data to the output item, such as the name, lore, etc, this can be done via the
-``bottle-extra-data`` option. If you enter a ``/give`` command compatible item, this data will be merged with the item
-that the XP Storer creates, allowing you to add whatever data you want to the output.
+如果你想为输出物品添加自定义数据，例如名称、描述等，可以通过 ``bottle-extra-data`` 选项实现。如果你输入一个与 ``/give`` 命令兼容的物品，这些数据将与经验存储器创建的物品合并，允许你向输出添加任何想要的数据。
 
-Want to change the name of your bottles to "Cool Beans"? Just enter ``minecraft:experience_bottle[custom_name='["",{"text":"Cool Beans","italic":false}]']`` as the value.
+想把你的瓶子名称改为“酷豆”？只需输入 ``minecraft:experience_bottle[custom_name='["",{"text":"Cool Beans","italic":false}]']`` 作为值即可。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``require-bottle``,"Requires the player to be holding a glass bottle to use.","true"
-  ``allow-offhand``,"Allows XP bottles in the off hand to work.","true"
-  ``bottle-xp-requirement``,"Sets the amount of XP points required per each bottle.","16"
-  ``bottle-xp-override``,"Set the amount of XP points that each bottle provides on usage (-1 to use MC behaviour).","-1"
-  ``bottle-extra-data``,"Extra data to apply to the item, using /give command syntax.","minecraft:experience_bottle"
-  ``block``,"The block that is an XP Storer.","minecraft:spawner"
-  ``allow-sneaking``,"Sets how the player must be sneaking in order to use the XP Storer.","false"
-  ``radius-mode``,"Allows XP Storer mechanics with a sign attached to work in a radius.","false"
-  ``max-radius``,"The max radius when using radius-mode.","5"
+  ``require-bottle``,"要求玩家手持玻璃瓶才能使用。","true"
+  ``allow-offhand``,"允许副手中的经验瓶生效。","true"
+  ``bottle-xp-requirement``,"每瓶经验瓶所需的经验点数。","16"
+  ``bottle-xp-override``,"设置每瓶经验瓶提供的经验点数（-1 表示使用 Minecraft 原版行为）。","-1"
+  ``bottle-extra-data``,"使用 /give 命令语法，应用于物品的额外数据。","minecraft:experience_bottle"
+  ``block``,"作为经验存储器的方块。","minecraft:spawner"
+  ``allow-sneaking``,"设置玩家使用经验存储器时必须潜行。","false"
+  ``radius-mode``,"允许带有告示牌的经验存储器以范围模式工作。","false"
+  ``max-radius``,"范围模式下的最大半径。","5"
 
-Permissions
+权限 Permissions
 ===========
 
 +-----------------------------+-----------------------------------------+
-|  Permission Node            |  Effect                                 |
+|  权限节点 Permission Node   |  效果 Effect                            |
 +=============================+=========================================+
-|  craftbook.xpstorer.create  |  Allows creation of the XP Storer sign. |
-|  craftbook.xpstorer.use     |  Allows use of the XP Storer.           |
+|  craftbook.xpstorer.create  |  允许创建经验存储器告示牌。              |
+|  craftbook.xpstorer.use     |  允许使用经验存储器。                    |
 +-----------------------------+-----------------------------------------+

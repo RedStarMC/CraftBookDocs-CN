@@ -1,41 +1,41 @@
 ==================
-Readable Bookshelf
+可读书架 Readable Bookshelf
 ==================
 
-The **Readable Bookshelf** mechanic make bookshelves "readable" on right click.
-Lines of text read from the books file will be printed to the player's chat on each right click, as if they read it from a book on the shelf.
+**可读书架（Readable Bookshelf）** 机制使书架在右键点击时可“阅读”。
+每次右键点击，从 books 文件中读取的文本行会打印到玩家的聊天栏中，就像他们从书架上的书中读到的一样。
 
 .. image:: /images/readable_bookshelf/reading.png
     :align: center
 
-Customizing the lines
+自定义文本行 Customizing the lines
 =====================
 
-A default collection of quotes are provided in the books.txt file that comes with the CraftBook download. It is found in the CraftBook folder.
+CraftBook 下载附带的 books.txt 文件中提供了一组默认的语录。该文件位于 CraftBook 文件夹中。
 
-You can add new lines, remove lines, or replace the entire file altogether. Each line of text is one "book". You can have as many or as few lines as you wish.
+你可以添加新行、删除行，或完全替换整个文件。每行文本代表一本“书”。你可以根据需要设置任意数量的行。
 
-Possible Uses
+可能用途 Possible Uses
 -------------
 
-A common use of the readable bookshelf mechanic is to inject "lore" on the server. For example, talking about past in-world events or history.
+可读书架机制的一个常见用途是在服务器中注入“背景故事”。例如，讲述游戏内过去的事件或历史。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-sneaking``,"Enable reading while sneaking.","false"
-  ``allow-holding-block``,"Allow bookshelves to work when the player is holding a block.","false"
+  ``allow-sneaking``,"允许在潜行时阅读。","false"
+  ``allow-holding-block``,"允许玩家手持方块时使用书架。","false"
 
 
-Permissions
+权限 Permissions
 ===========
 
 +----------------------------------+--------------------------------------+
-|  Permission Node                 |  Effect                              |
+|  权限节点 Permission Node        |  效果 Effect                         |
 +==================================+======================================+
-|  craftbook.readablebookshelf.use |  Allows use of Readable Bookshelves. |
+|  craftbook.readablebookshelf.use |  允许使用可读书架。                   |
 +----------------------------------+--------------------------------------+

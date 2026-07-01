@@ -1,32 +1,27 @@
 =============
-Better Sponge
+更好的海绵 Better Sponge
 =============
 
-The **Better Sponge** mechanic enhances the vanilla functionality of sponges, by allowing sponges to act as a
-"force field" to keep water out of an area.
+**更好的海绵（Better Sponge）** 机制增强了海绵的原版功能，允许海绵作为“力场”将水阻挡在区域之外。
 
-By default, sponges operate in a spherical radius of 5. This can be changed to a different radius, and also to a cuboid
-radius rather than spherical. The better sponge mechanic also only uses dry sponges by default, but can be configured
-to also work with wet sponges.
+默认情况下，海绵的生效范围为球形半径 5。这可以更改为不同的半径，也可以改为长方体范围而非球形。更好的海绵机制默认只使用干海绵，但也可以配置为对湿海绵生效。
 
-Some blocks that sponges remove won't re-appear once the sponge is deactivated, such as kelp, seagrass, and other aquatic
-plants that don't have a waterlogged state. Whether these blocks are removed by sponges is configurable, however it is enabled by default.
+某些被海绵移除的方块在海绵停用后不会重新出现，例如海带、海草和其他没有含水状态的水生植物。海绵是否移除这些方块是可配置的，但默认启用。
 
-Require Redstone
+需要红石 Require Redstone
 ================
 
-It is possible to set the better sponge mechanic to require a redstone signal.In this mode, sponges will remove water
-when powered, and stop removing water when unpowered. This can be used for conditional water removal.
+可以将更好的海绵机制设置为需要红石信号。在此模式下，海绵在充能时移除水，在未充能时停止移除水。这可以用于条件性的水移除。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``radius``,"The maximum radius of the sponge.","5"
-  ``sphere-range``,"Whether the active range should be spherical or cuboid.","true"
-  ``include-wet-sponges``,"Whether wet sponges also activate the mechanic.","false"
-  ``require-redstone``,"Whether to require redstone to suck up water or not.","false"
-  ``destructive``,"Whether to remove blocks that spread water such as kelp. These will not be returned when the sponge is de-activated.","true"
+  ``radius``,"海绵的最大作用半径。","5"
+  ``sphere-range``,"作用范围应为球形还是长方体。","true"
+  ``include-wet-sponges``,"湿海绵是否也能触发此机制。","false"
+  ``require-redstone``,"是否需要红石来吸水。","false"
+  ``destructive``,"是否移除会扩散水的方块（如海带）。这些方块在海绵停用后不会恢复。","true"

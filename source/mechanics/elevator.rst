@@ -1,63 +1,63 @@
 ========
-Elevator
+电梯 Elevator
 ========
 
-The **Elevator** mechanic allow you to move between floors easily by using lift signs. Signs must be created in the same location but above or below in order to link floors to each other.
+**电梯（Elevator）** 机制允许玩家通过电梯告示牌轻松地在楼层之间移动。告示牌必须创建在同一位置但上下不同高度，以便将各层连接起来。
 
-Construction
+建造方法
 ============
 
-Elevators are just wall signs that are above or below each other. However, there are different types of wall signs that determine what you can do on a certain level.
+电梯就是位于彼此上方或下方的墙壁告示牌。但是，不同类型的墙壁告示牌决定了你在特定楼层可以做什么。
 
-The following are entered on the second line of a sign,
+以下内容填写在告示牌的第二行：
 
-* ``[Lift Up]``: Allows players to travel upwards towards the next elevator sign.
-* ``[Lift Down]``: Allows players to travel downwards towards the next elevator sign.
-* ``[Lift UpDown]``: Allows players to travel either upwards or downwards towards an elevator based on whether they click the top or bottom half of the sign.
-* ``[Lift]``: Does not allow players to travel from this floor, but allows them to arrive there.
+* ``[Lift Up]``：允许玩家向上移动到下一个电梯告示牌。
+* ``[Lift Down]``：允许玩家向下移动到下一个电梯告示牌。
+* ``[Lift UpDown]``：根据玩家点击告示牌的上半部分还是下半部分，允许向上或向下移动到电梯。
+* ``[Lift]``：不允许玩家从该楼层出发，但允许他们到达该楼层。
 
-All lift types allow the player to arrive, the type only denotes how they can travel.
+所有电梯类型都允许玩家到达，类型仅表示他们如何出发。
 
-If the elevator looping setting is enabled, lifts can loop from the top of the world to the bottom, and vice versa. This means lifts going up on the top floor will go to the bottom.
+如果启用了电梯循环设置，电梯可以从世界顶部循环到底部，反之亦然。这意味着顶层向上的电梯将到达底部。
 
-Welcome Message
+欢迎信息 Welcome Message
 ---------------
 
-You can give floors names by using the first line of the sign. When a player arrives at a named floor, the message shown in chat will show the name of the floor.
+你可以使用告示牌的第一行为楼层命名。当玩家到达一个有名称的楼层时，聊天中显示的消息将显示楼层名称。
 
-Button Lifts
+按钮电梯 Button Lifts
 ------------
 
-If button lifts are enabled, elevators can be activated by using buttons on the opposite side of the block containing the elevator sign.
+如果启用了按钮电梯，可以通过使用电梯告示牌所在方块另一侧的按钮来激活电梯。
 
 .. note::
 
-  When using buttons, the elevator will search from the location of the button when finding other elevator stops. This means all floors must use buttons in order to work correctly.
+  使用按钮时，电梯会从按钮的位置开始搜索其他电梯停靠点。这意味着所有楼层都必须使用按钮才能正常工作。
 
-Obstruction
+阻碍检查 Obstruction
 -----------
 
-To prevent players from suffocating, CraftBook checks the area to make sure there is enough space and a floor to place them on. If there isn't, you'll get a message about the destination being obstructed.
+为了防止玩家窒息，CraftBook 会检查目标区域，确保有足够的空间和地面可供玩家站立。如果没有，你会收到目的地被阻挡的提示信息。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-redstone``,"Allows elevators to be triggered by redstone, which will move all players in a radius.","false"
-  ``redstone-player-search-radius``,"The radius that elevators will look for players in when triggered by redstone.","3"
-  ``enable-buttons``,"Allow elevators to be used by a button on the other side of the block.","true"
-  ``allow-looping``,"Allows elevators to loop the world height. The heighest lift up will go to the next lift on the bottom of the world and vice versa.","false"
+  ``allow-redstone``,"允许电梯由红石触发，这将移动半径内的所有玩家。","false"
+  ``redstone-player-search-radius``,"红石触发时，电梯搜索玩家的半径。","3"
+  ``enable-buttons``,"允许通过方块另一侧的按钮使用电梯。","true"
+  ``allow-looping``,"允许电梯在世界高度范围内循环。最高的向上电梯将到达世界底部下一个电梯，反之亦然。","false"
 
-Permissions
+权限 Permissions
 ===========
 
 +------------------------------+--------------------------------+
-|  Permission Node             |  Effect                        |
+|  权限节点 Permission Node    |  效果 Effect                   |
 +==============================+================================+
-|  craftbook.elevator.create   |  Allows creation of elevators. |
+|  craftbook.elevator.create   |  允许创建电梯。                |
 +------------------------------+--------------------------------+
-|  craftbook.elevator.use      |  Allows usage of elevators.    |
+|  craftbook.elevator.use      |  允许使用电梯。                |
 +------------------------------+--------------------------------+

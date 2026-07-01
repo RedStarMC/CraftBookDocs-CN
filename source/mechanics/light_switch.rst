@@ -1,50 +1,50 @@
 ============
-Light Switch
+电灯开关 Light Switch
 ============
 
-The **Light Switch** mechanic toggle nearby torches between regular torches and redstone torches, in effect changing the amount of the light in the area.
+**电灯开关（Light Switch）** 机制可将附近火把在普通火把和红石火把之间切换，从而改变区域内的光照强度。
 
-Construction
+建造方法
 ============
-Light switches consist of two parts:
+电灯开关由两部分组成：
 
-* A wall sign with [I] or [|] as the second line.
-* Either a redstone torch or a regular torch above the sign.
-* A custom range for searching on the third line (optional)
-* A custom maximum light changes per click on fourth line (optional)
+* 一个墙壁告示牌，第二行为 ``[I]`` 或 ``[|]``。
+* 告示牌上方放置一个红石火把或普通火把。
+* 第三行可选输入自定义搜索范围
+* 第四行可选输入每次点击最大灯光切换数量
 
-The maximum range and light changes that can be entered on the sign are changeable in the configuration.
+告示牌上可输入的最大范围和灯光切换数量可在配置中更改。
 
-Right clicking the sign will toggle the lights in the general area.
+右键点击告示牌将切换周围区域的光源。
 
-Uses
+用途 Uses
 ====
 
-What the light switch can do:
+电灯开关可以做到：
 
-- Light up an area.
-- Power redstone circuits.
-- Act as a door lock.
-- Some other clever use that will blow all of our minds.
+- 照亮一个区域。
+- 为红石电路供电。
+- 作为门锁。
+- 其他一些巧妙的用法，可能会让我们大开眼界。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``max-range``,"The maximum range that the mechanic searches for lights in.","10"
-  ``max-lights``,"The maximum amount of lights that a light switch can toggle per usage.","20"
+  ``max-range``,"机制搜索光源的最大范围。","10"
+  ``max-lights``,"电灯开关每次使用可切换的最大光源数量。","20"
 
 
-Permissions
+权限 Permissions
 ===========
 
 +----------------------------------+-----------------------------------------------+
-|  Permission Node                 |  Effect                                       |
+|  权限节点 Permission Node        |  效果 Effect                                  |
 +==================================+===============================================+
-|  craftbook.lightswitch.create    |  Allows for creation of light switches.       |
+|  craftbook.lightswitch.create    |  允许创建电灯开关。                           |
 +----------------------------------+-----------------------------------------------+
-|  craftbook.lightswitch.use       |  Allows the light switch mechanic to be used. |
+|  craftbook.lightswitch.use       |  允许使用电灯开关机制。                       |
 +----------------------------------+-----------------------------------------------+

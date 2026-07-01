@@ -1,58 +1,58 @@
 ==========
-Teleporter
+传送器 Teleporter
 ==========
 
-The **Teleporter** mechanic allow you to teleport by clicking a sign.
+**传送器（Teleporter）** 机制允许你通过点击告示牌进行传送。
 
-Construction
+建造方法
 ============
 
-Teleporters are just signs with the text ``[Teleporter]`` on the second line.
+传送器就是第二行为 ``[Teleporter]`` 的告示牌。
 
-The destination is entered on the third line with x,y,z coordinates. For example, ``1,2,3`` is an x of 1, a y of 2, and a z of 3.
+目标位置在第三行输入，格式为 x,y,z 坐标。例如，``1,2,3`` 表示 x=1，y=2，z=3。
 
-Require Sign
+需要目标告示牌 Require Sign
 ------------
 
-To prevent players just teleporting anywhere, CraftBook can be configured to require a teleporter sign to be created at the destination location. This means a player cannot create a teleporter to a location they cannot access or build in, as they cannot create the destination sign.
+为了防止玩家随意传送到任何地方，CraftBook 可以配置为在目标位置必须存在一个传送器告示牌。这意味着玩家无法创建通往他们无法访问或无法建造的位置的传送器，因为他们无法在该位置创建目标告示牌。
 
 .. note::
 
-  This still allows players to teleport to pre-built teleporter signs by other players, allowing public teleport destinations.
+  这仍然允许玩家传送到其他玩家预先建造的传送器告示牌，从而提供公共传送目的地。
 
-Arrival Signs
+到达专用告示牌 Arrival Signs
 -------------
 
-If nothing is entered on the third line, the teleporter will act as an arrival only sign. This is useful in conjunction with requiring signs to create a point where players can teleport to.
+如果第三行为空，该传送器将仅作为到达专用告示牌。这在配合“需要目标告示牌”功能时很有用，可以创建一个玩家可以传送到达的点。
 
-Button Teleporters
+按钮传送器 Button Teleporters
 ------------------
 
-If button teleporters are enabled, teleporters can be activated by using buttons on the opposite side of the block containing the teleporter sign.
+如果启用了按钮传送器，可以通过使用传送器告示牌所在方块另一侧的按钮来激活传送器。
 
-Obstruction
+阻碍检查 Obstruction
 -----------
 
-To prevent players from suffocating, CraftBook checks the area to make sure there is enough space and a floor to place them on. If there isn't, you'll get a message about the destination being obstructed.
+为了防止玩家窒息，CraftBook 会检查目标区域，确保有足够的空间和地面可供玩家站立。如果没有，你会收到目的地被阻挡的提示信息。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``require-sign``,"Require a sign to be at the destination of the teleportation.","false"
-  ``max-range``,"The maximum distance between the start and end of a teleporter. Set to 0 for infinite.","0"
-  ``enable-buttons``,"Allow teleporters to be used by a button on the other side of the block.","true"
+  ``require-sign``,"要求传送目标位置必须存在告示牌。","false"
+  ``max-range``,"传送器起点和终点之间的最大距离。设为 0 表示无限制。","0"
+  ``enable-buttons``,"允许通过方块另一侧的按钮使用传送器。","true"
 
-Permissions
+权限 Permissions
 ===========
 
 +--------------------------------+----------------------------------+
-|  Permission Node               |  Effect                          |
+|  权限节点 Permission Node      |  效果 Effect                     |
 +================================+==================================+
-|  craftbook.teleporter.create   |  Allows creation of Teleporters. |
+|  craftbook.teleporter.create   |  允许创建传送器。                |
 +--------------------------------+----------------------------------+
-|  craftbook.teleporter.use      |  Allows usage of Teleporters.    |
+|  craftbook.teleporter.use      |  允许使用传送器。                |
 +--------------------------------+----------------------------------+

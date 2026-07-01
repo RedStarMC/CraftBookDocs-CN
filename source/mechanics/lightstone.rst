@@ -1,37 +1,35 @@
 ==========
-LightStone
+光照计 LightStone
 ==========
 
-The **LightStone** mechanic allows you to get the current light level for a block.
+**光照计（LightStone）** 机制允许你获取方块处的当前光照等级。
 
-Right click any block while holding GlowStone Dust to see the light level. If the light level is high enough that
-monsters won't spawn, the bar is shown as green. If they are able to spawn at the clicked location, it will be shown
-as red.
+手持荧石粉右键点击任意方块，即可查看光照等级。如果光照等级足够高以至于怪物不会生成，进度条显示为绿色。如果点击位置可以生成怪物，则显示为红色。
 
-The message can be configured to show in either the chat, or the action bar. The action bar is the default.
+消息可以配置为显示在聊天栏或操作栏中。默认为操作栏。
 
 .. note::
 
-    Most hostile monsters in Minecraft can spawn at a light level of 8 or below.
+    Minecraft 中大多数敌对怪物可以在光照等级为 8 或以下时生成。
 
 .. image:: /images/lightstone/lightstone.png
     :align: center
 
-Configuration
+配置 Configuration
 =============
 
 ============== =================================================== ========================
-Node           Comment                                             Default
+节点 Node          说明 Comment                                           默认值 Default
 ============== =================================================== ========================
-item           The item for the lightstone tool.                   minecraft:glowstone_dust
-use-action-bar Whether to use the action bar or the player's chat. true
+item           光照计工具使用的物品。                                    minecraft:glowstone_dust
+use-action-bar 是否使用操作栏而非玩家聊天栏。                             true
 ============== =================================================== ========================
 
-Permissions
+权限 Permissions
 ===========
 
 +---------------------------+-------------------------------------+
-|  Permission Node          |  Effect                             |
+|  权限节点 Permission Node |  效果 Effect                        |
 +===========================+=====================================+
-|  craftbook.lightstone.use |  Allows use of the Lightstone tool. |
+|  craftbook.lightstone.use |  允许使用光照计工具。                |
 +---------------------------+-------------------------------------+

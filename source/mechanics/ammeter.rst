@@ -1,40 +1,40 @@
 =======
-Ammeter
+电流表 Ammeter
 =======
 
-The **Ammeter** mechanic allows you to get the current level (or amperage) in wires and redstone devices.
+**电流表（Ammeter）** 机制允许你获取导线和红石装置中的当前信号强度（或电流值）。
 
-Right click any redstone device while holding coal (or another configured item) to see the meter's output. This can be useful when debugging analogue redstone circuits, such as those that use comparators.
+手持煤炭（或其他配置的物品）右键点击任意红石装置，即可查看电流表的输出。这在调试模拟红石电路（例如使用比较器的电路）时非常有用。
 
-The message can be configured to show in either the chat, or the action bar. The action bar is the default.
+消息可以配置为显示在聊天栏或操作栏中。默认为操作栏。
 
 .. note::
 
-    The current in wires decrease by one every block and source blocks emit a level of 15, giving us the wire length limit of 15 blocks.
+    导线中的电流每经过一个方块减少 1，而信号源方块发出 15 级的信号，因此导线的长度限制为 15 个方块。
 
 .. image:: /images/ammeter/ammeter.png
     :align: center
 
-Video Tutorial
+视频教程 Video Tutorial
 ==============
 
 .. youtube:: G-fBpGHGKnU
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``item``,"The item for the ammeter tool.","minecraft:coal"
-  ``use-action-bar``,"Whether to use the action bar or the player's chat.","true"
+  ``item``,"电流表工具使用的物品。","minecraft:coal"
+  ``use-action-bar``,"是否使用操作栏而非玩家聊天栏。","true"
 
-Permissions
+权限 Permissions
 ===========
 
 ===================== ===============================
-Permission Node       Effect
+权限节点 Permission Node  效果 Effect
 ===================== ===============================
-craftbook.ammeter.use Allows use of the Ammeter tool.
+craftbook.ammeter.use 允许使用电流表工具。
 ===================== ===============================
