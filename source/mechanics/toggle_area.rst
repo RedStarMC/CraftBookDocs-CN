@@ -1,126 +1,129 @@
 ===========
-Toggle Area
+切换区域 Toggle Area
 ===========
 
-The **Toggle Area** mechanic allows you to create areas of arbitrary size that can be toggled on and off by right clicking a sign, using redstone, or by using a command.
+**切换区域（Toggle Area）** 机制允许你创建任意大小的区域，并通过右键点击告示牌、使用红石或使用命令来切换其召唤/收回状态。
 
-Construction
+建造方法
 ============
 
-Toggle areas within the world exist as a sign, referencing one to two areas that have been saved with commands.
+世界中的切换区域以一个告示牌为参照，引用一个或两个已通过命令保存的区域。
 
-The base Toggle Area sign can be setup with the following lines on the sign:
+基础切换区域告示牌可按以下行设置：
 
-1. The namespace, or blank to use personal namespace
+1. 命名空间（空白则使用个人命名空间）
 2. ``[ToggleArea]``
-3. The area name
-4. Another area name to show when turned off, or blank to replace the area with air
+3. 区域名称
+4. 关闭时显示的另一区域名称（留空则替换为空气）
 
-Saved areas are inherently tied to the location they were at when they were saved. No matter where a toggle area sign is created, it will always toggle at the location that the save occurred.
+译注：命名空间见"https://craftbook.enginehub.org/en/5.0.0/mechanics/variables/"
 
-If allowed within the config, redstone can be used to toggle the area on or off via the sign. Otherwise the sign can be right clicked to toggle it.
+保存的区域与其保存时的位置固有绑定。无论切换区域告示牌创建在何处，它都将在保存时的位置进行切换。
+译注：就像worldedit的//copy和//paste一样
 
-Auto-saving areas
+如果配置允许，红石可用于通过告示牌切换区域开关。否则，可以右键点击告示牌进行切换。
+
+自动保存区域 Auto-saving areas
 -----------------
 
-If you would like your toggle area to retain alterations every time they are toggled, you can instead create a ``[ToggleAreaSave]`` sign. These act the same as normal toggle area signs, but they re-save the area each time they are toggled.
+如果你希望切换区域在每次切换时保留对其所做的修改，可以改用 ``[ToggleAreaSave]`` 告示牌。其行为与普通切换区域告示牌相同，但每次切换时会重新保存该区域。
 
-Toggle command
+切换命令 Toggle command
 --------------
 
-For complex situations, CraftBook provides an ``/area toggle`` command. This allows providing in-game coordinates (and optionally a world if run from the console) to toggle a toggle area sign.
+对于复杂情况，CraftBook 提供了 ``/area toggle`` 命令。该命令允许提供游戏内坐标（从控制台运行时可选提供世界）来切换切换区域告示牌。
 
-For example, the following would toggle a sign that exists at X: 0, Y: 0, Z: 0 in the world named ``world``,
+例如，以下命令将切换位于名为 ``world`` 的世界中坐标 X:0, Y:0, Z:0 处的告示牌：
 
 ``/area toggle -w world 0,0,0``
 
-Namespaces
+命名空间 Namespaces
 ==========
 
-Toggle areas use the concept of namespaces when saving and referencing areas. By default, all commands and signs will use the player's own personal namespace.
+切换区域在保存和引用区域时使用命名空间概念。默认情况下，所有命令和告示牌都使用玩家自己的个人命名空间。
 
-Personal namespaces
+个人命名空间 Personal namespaces
 -------------------
 
-Personal namespaces are special, as they can only be used by the player that owns them. They internally save under the player's UUID, and are automatically used by all commands and signs when a namespace is not specified.
+个人命名空间是特殊的，因为它们只能由拥有该空间的玩家使用。它们内部以玩家的 UUID 保存，当未指定命名空间时，所有命令和告示牌会自动使用。
 
-On the sign, these will show as ``~[name]`` in italics, to denote a personal namespace rather than a custom one.
+在告示牌上，它们会以斜体显示为 ``~[名称]``，以表示这是个人命名空间而非自定义命名空间。
 
-Personal namespaces are the recommended way to use Toggle Areas outside of server admin usecases, as they also respect the ``max-per-user`` configuration option. It also acts as a simple way to prevent players from editing other player's Toggle Areas.
+个人命名空间是服务器管理员用例之外推荐使用的方式，因为它们也遵守 ``max-per-user`` 配置选项。同时，它也是一种简单的方法，可以防止玩家编辑其他人的切换区域。
 
-Custom namespaces
+自定义命名空间 Custom namespaces
 -----------------
 
-If you want multiple people to have access to the same namespace, you can use custom namespaces. These are used within commands by supplying the ``-n`` flag, and on signs by entering it on the first line.
+如果你希望多人共享同一个命名空间，可以使用自定义命名空间。在命令中通过提供 ``-n`` 标志使用，在告示牌上则在第一行输入。
 
-For example, to save to a custom namespace you can use the following,
+例如，保存到自定义命名空间可使用以下命令：
 
 ``/area save -n some_text area_name``
 
-This will save a toggle area called ``area_name`` within the namespace ``some_text``. This can then be used on a sign by entering ``some_text`` on the first line, and ``area_name`` on the third.
+这会将名为 ``area_name`` 的切换区域保存到命名空间 ``some_text`` 中。然后在告示牌上，第一行输入 ``some_text``，第三行输入 ``area_name`` 即可使用。
 
-Area Management
+区域管理 Area Management
 ===============
 
-Saving
+保存 Saving
 ------
 
-Areas are made using WorldEdit selections, and the ``/area save [name]`` command.
+区域使用 WorldEdit 选区（selection）和 ``/area save [名称]`` 命令创建。
 
-Once you have a selection, simply run the command and it will be saved to the player's namespace. You can use the ``-n`` flag to use a custom namespace.
+一旦你创建了选区，只需运行该命令即可将其保存到玩家的命名空间。你可以使用 ``-n`` 标志指定自定义命名空间。
 
-Listing
+列表 Listing
 -------
 
-You can get a list of areas currently saved using the ``/area list`` command.
+使用 ``/area list`` 命令可以获取当前已保存区域的列表。
 
-By default it will use the personal namespace, however you can supply a custom namespace using the ``-n`` flag. You can also search across all namespaces, using the ``-a`` flag.
+默认使用个人命名空间，但你可以使用 ``-n`` 标志指定自定义命名空间。你也可以使用 ``-a`` 标志跨所有命名空间搜索。
 
-Deleting
+删除 Deleting
 --------
 
-To delete areas, you can use the ``/area delete`` command, and to delete all areas within a namespace you can use the ``/area delete-all`` command.
+要删除区域，可使用 ``/area delete`` 命令；要删除命名空间内的所有区域，可使用 ``/area delete-all`` 命令。
 
-By default these will use the personal namespace, but you can supply a custom namespace with the ``-n`` flag.
+默认使用个人命名空间，但你可以使用 ``-n`` 标志指定自定义命名空间。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-redstone``,"Allow ToggleAreas to be toggled via redstone.","true"
-  ``max-size``,"Sets the max amount of blocks that a ToggleArea can hold.","5000"
-  ``max-per-user``,"Sets the max amount of ToggleAreas that can be within one personal namespace.","30"
+  ``allow-redstone``,"允许切换区域通过红石切换。","true"
+  ``max-size``,"设置切换区域可包含的最大方块数量。","5000"
+  ``max-per-user``,"设置单个个人命名空间中最多可保存的切换区域数量。","30"
 
-Permissions
+权限 Permissions
 ===========
 
 .. csv-table::
-  :header: Permission Node, Effect
+  :header: 权限节点 Permission Node, 效果 Effect
   :widths: 20, 30
 
-  ``craftbook.togglearea.create``,"Allows the creation of Toggle Area signs"
-  ``craftbook.togglearea.create.save``,"Allows for the creation of Toggle Area Save signs"
-  ``craftbook.togglearea.use``,"Allows using Toggle Area signs"
-  ``craftbook.togglearea.save``,"Allows using the ``/area save`` command"
-  ``craftbook.togglearea.save.[namespace]``,"Allows saving within the specified namespace"
-  ``craftbook.togglearea.save.self``,"Allows saving within the player's own namespace"
-  ``craftbook.togglearea.bypass-area-limit``,"Allows bypassing the maximum number of areas"
-  ``craftbook.togglearea.list``,"Allows using the ``/area list`` command"
-  ``craftbook.togglearea.list.[namespace]``,"Allows listing within the specified namespace"
-  ``craftbook.togglearea.list.all``,"Allows listing across all namespaces"
-  ``craftbook.togglearea.list.self``,"Allows listing within the player's own namespace"
-  ``craftbook.togglearea.toggle-command``,"Allows using the ``/area toggle`` command"
-  ``craftbook.togglearea.delete``,"Allows using the ``/area delete`` command"
-  ``craftbook.togglearea.delete.[namespace]``,"Allows deleting within the specified namespace"
-  ``craftbook.togglearea.delete.self``,"Allows deleting within the player's own namespace"
-  ``craftbook.togglearea.delete.[namespace].all``,"Allows deleting all areas within the specified namespace"
-  ``craftbook.togglearea.delete.self.all``,"Allows deleting all areas within the player's own namespace"
+  ``craftbook.togglearea.create``,"允许创建切换区域告示牌"
+  ``craftbook.togglearea.create.save``,"允许创建切换区域自动保存告示牌"
+  ``craftbook.togglearea.use``,"允许使用切换区域告示牌"
+  ``craftbook.togglearea.save``,"允许使用 ``/area save`` 命令"
+  ``craftbook.togglearea.save.[namespace]``,"允许在指定命名空间中保存"
+  ``craftbook.togglearea.save.self``,"允许在玩家自己的命名空间中保存"
+  ``craftbook.togglearea.bypass-area-limit``,"允许绕过最大区域数量限制"
+  ``craftbook.togglearea.list``,"允许使用 ``/area list`` 命令"
+  ``craftbook.togglearea.list.[namespace]``,"允许列出指定命名空间中的区域"
+  ``craftbook.togglearea.list.all``,"允许跨所有命名空间列出区域"
+  ``craftbook.togglearea.list.self``,"允许列出玩家自己的命名空间中的区域"
+  ``craftbook.togglearea.toggle-command``,"允许使用 ``/area toggle`` 命令"
+  ``craftbook.togglearea.delete``,"允许使用 ``/area delete`` 命令"
+  ``craftbook.togglearea.delete.[namespace]``,"允许删除指定命名空间中的区域"
+  ``craftbook.togglearea.delete.self``,"允许删除玩家自己命名空间中的区域"
+  ``craftbook.togglearea.delete.[namespace].all``,"允许删除指定命名空间中的所有区域"
+  ``craftbook.togglearea.delete.self.all``,"允许删除玩家自己命名空间中的所有区域"
 
 
-Commands
+命令 Commands
 ========
 
 .. contents::
@@ -128,7 +131,7 @@ Commands
 
 .. note::
 
-    Arguments enclosed in ``[ ]`` are optional, those enclosed in ``< >`` are required.
+    用 ``[ ]`` 括起来的参数为可选，用 ``< >`` 括起来的为必需。
 
 ToggleArea
 ~~~~~~~~~~
@@ -136,14 +139,14 @@ ToggleArea
 
     <span id="command-/area"></span>
 
-.. topic:: ``/area`` (or ``/togglearea``)
+.. topic:: ``/area``（或 ``/togglearea``）
     :class: command-topic
 
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/area <delete-all|save|toggle|list|delete>``"
-        **Description**,"CraftBook ToggleArea Commands"
+        **用法 Usage**,"``/area <delete-all|save|toggle|list|delete>``"
+        **描述 Description**,"CraftBook 切换区域命令"
 
 .. raw:: html
 
@@ -155,10 +158,10 @@ ToggleArea
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/area delete-all <piston.argument.namespace...>``"
-          ``<piston.argument.namespace...>``,"The namespace"
-        **Description**,"Deletes all the areas in a namespace."
-        **Permissions**,"``craftbook.togglearea.delete``"
+        **用法 Usage**,"``/area delete-all <piston.argument.namespace...>``"
+          ``<piston.argument.namespace...>``,"命名空间"
+        **描述 Description**,"删除命名空间中的所有区域。"
+        **权限 Permissions**,"``craftbook.togglearea.delete``"
 
 .. raw:: html
 
@@ -170,13 +173,13 @@ ToggleArea
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/area save [-be] [-n <piston.argument.namespace>] <piston.argument.name>``"
-          ``[-e]``,"Save entities"
-          ``[-n <piston.argument.namespace>]``,"The namespace"
-          ``<piston.argument.name>``,"The area name"
-          ``[-b]``,"Save biomes"
-        **Description**,"Saves the selected area"
-        **Permissions**,"``craftbook.togglearea.save``"
+        **用法 Usage**,"``/area save [-be] [-n <piston.argument.namespace>] <piston.argument.name>``"
+          ``[-e]``,"保存实体"
+          ``[-n <piston.argument.namespace>]``,"命名空间"
+          ``<piston.argument.name>``,"区域名称"
+          ``[-b]``,"保存生物群系"
+        **描述 Description**,"保存选中的区域"
+        **权限 Permissions**,"``craftbook.togglearea.save``"
 
 .. raw:: html
 
@@ -188,12 +191,12 @@ ToggleArea
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/area toggle [-s] [-w <piston.argument.world>] <piston.argument.position>``"
-          ``[-w <piston.argument.world>]``,"The world"
-          ``<piston.argument.position>``,"The location"
-        **Description**,"Toggle an area sign at the given location."
-        **Permissions**,"``craftbook.togglearea.toggle-command``"
-          ``[-s]``,"Silence output"
+        **用法 Usage**,"``/area toggle [-s] [-w <piston.argument.world>] <piston.argument.position>``"
+          ``[-w <piston.argument.world>]``,"世界"
+          ``<piston.argument.position>``,"坐标位置"
+        **描述 Description**,"切换指定位置处的区域告示牌。"
+        **权限 Permissions**,"``craftbook.togglearea.toggle-command``"
+          ``[-s]``,"静默输出"
 
 .. raw:: html
 
@@ -205,12 +208,12 @@ ToggleArea
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/area list [-a] [-n <piston.argument.namespace>] [-p <piston.argument.page>]``"
-          ``[-n <piston.argument.namespace>]``,"The namespace"
-          ``[-p <piston.argument.page>]``,"The page"
-          ``[-a]``,"List from all namespaces"
-        **Description**,"Lists the areas of the given namespace or lists all areas."
-        **Permissions**,"``craftbook.togglearea.list``"
+        **用法 Usage**,"``/area list [-a] [-n <piston.argument.namespace>] [-p <piston.argument.page>]``"
+          ``[-n <piston.argument.namespace>]``,"命名空间"
+          ``[-p <piston.argument.page>]``,"页码"
+          ``[-a]``,"列出所有命名空间中的区域"
+        **描述 Description**,"列出指定命名空间中的区域，或列出所有区域。"
+        **权限 Permissions**,"``craftbook.togglearea.list``"
 
 .. raw:: html
 
@@ -222,9 +225,8 @@ ToggleArea
 .. csv-table::
   :widths: 8, 15
 
-        **Usage**,"``/area delete [-n <piston.argument.namespace>] <piston.argument.name>``"
-          ``[-n <piston.argument.namespace>]``,"The namespace"
-          ``<piston.argument.name>``,"The area name"
-        **Description**,"Lists the areas of the given namespace or lists all areas."
-        **Permissions**,"``craftbook.togglearea.delete``"
-
+        **用法 Usage**,"``/area delete [-n <piston.argument.namespace>] <piston.argument.name>``"
+          ``[-n <piston.argument.namespace>]``,"命名空间"
+          ``<piston.argument.name>``,"区域名称"
+        **描述 Description**,"删除指定命名空间中的区域。"
+        **权限 Permissions**,"``craftbook.togglearea.delete``"

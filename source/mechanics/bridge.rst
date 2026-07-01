@@ -1,96 +1,96 @@
 ======
-Bridge
+桥梁 Bridge
 ======
 
-The **Bridge** mechanic allows you to create variable-width flat sections of the world that you can toggle on and off.
+**桥梁（Bridge）** 机制允许你创建可切换的、可变宽度的扁平区域结构。
 
-They can be toggled using two different methods:
+可以通过以下两种方式进行切换：
 
-* Right clicking the sign
-* Powering the sign with redstone
+* 右键点击告示牌
+* 用红石给告示牌充能
 
-Construction
+建造方法
 ============
 
-Bridges consist of three parts:
+桥梁由三部分组成：
 
-- A flat rectangle of blocks made out of a single material, marking the base of the bridge. The allowed materials are specified in the configuration.
-- One bridge sign (see ``Sign Types`` below) post on one end, either above or below the bridge. Alternatively, a wall sign can be placed on the side of the block that the sign post would be placed above/below.
-- Another bridge sign on the other end, with same placement instructions as above.
+- 由单一材料构成的扁平矩形方块区域，作为桥梁的基底。允许的材料在配置文件中指定。
+- 在一端放置一根桥梁告示牌（详见下方“告示牌类型”），位于桥梁的上方或下方。或者，也可以将墙壁告示牌放置在原本应放置告示牌柱的方块的侧面。
+- 在另一端放置另一根桥梁告示牌，放置方式同上。
 
-The signs can be both either above or below the bridge (Or on the side of the block), but they must both have the same placement style.
+两根告示牌可以都在桥梁上方或都在下方（或在方块侧面），但两者必须采用相同的放置方式。
 
 .. image:: /images/bridge/bridge_closed.png
     :align: center
 
-Bridge Width
+桥梁宽度 Bridge Width
 ------------
 
-Bridges will intelligently determine how wide they are meant to be based on the row of blocks placed at each end. The bridge will be as wide as the row of blocks, with a minimum of one block. The maximum width is configurable, and is per-side rather than in-total.
+桥梁会根据两端放置的方块行数智能判断其宽度。桥梁的宽度与该行方块数一致，最小为1格。最大宽度可配置，且是按**单侧**计算而非总宽度。
 
-Sign Types
+告示牌类型 Sign Types
 ----------
 
-* ``[Bridge]`` - A bridge sign that can be toggled by a player or redstone
-* ``[Bridge End]`` - A bridge sign that cannot be toggled. Useful for creating bridges that can only be opened by one end.
+* ``[Bridge]`` —— 可由玩家或红石切换的桥梁告示牌。
+* ``[Bridge End]`` —— 无法切换的桥梁告示牌。适用于创建只能从一端打开的桥梁。
 
-Redstone Support
+红石支持 Redstone Support
 ----------------
 
-Bridges can be toggled by redstone: just run redstone current into the sign. You may want to place signs under bridges so that they are not unsightly if you do use redstone.
+桥梁可以通过红石切换：只需将红石信号接入告示牌即可。如果使用红石，你可能希望将告示牌放在桥梁下方，以免影响美观。
 
-- An active input creates the bridge.
-- An inactive input removes the bridge.
+- 激活信号（有信号）—— 生成桥梁。
+- 非激活信号（无信号）—— 移除桥梁。
 
-Restocking
+补货 Restocking
 ----------
 
-By default CraftBook is designed to prevent duplicating blocks through its mechanisms. This means that if you use a bridge, the blocks have to come from somewhere. CraftBook stores these blocks within a hidden inventory on the signs themselves. If there aren't enough blocks inside this inventory however, the bridge will need to be restocked.
+默认情况下，CraftBook 设计为防止通过其机制复制方块。这意味着如果你使用桥梁，方块必须来自某个来源。CraftBook 会将这些方块存储在告示牌自身的隐藏库存中。但如果库存中的方块不足，则需要为桥梁补货。
 
-To restock a bridge, simply right click the sign with the blocks you want to restock it with. The bridge will then be restocked with the blocks you have provided. The inventories are shared between both ends of the bridge, so it doesn't matter which sign you restock.
+要补货，只需手持要补充的方块右键点击告示牌即可。桥梁将使用你提供的方块进行补货。库存由桥梁两端共享，因此补货哪一端都可以。
 
-Infinite Bridges
+无限桥梁 Infinite Bridges
 ~~~~~~~~~~~~~~
 
-You can also create bridges with an infinite stockpile by entering ``infinite`` on the first line of the sign. This will automatically disappear on first usage, storing infinite blocks.
+你也可以通过在告示牌第一行输入 ``infinite`` 来创建无限库存的桥梁。这会在首次使用后自动消失，并存储无限数量的方块。
 
-Uses
+用途 Uses
 ====
 
-Aside from the obvious use as a retractable bridge, some possibilities include:
+除了明显的可伸缩桥梁用途外，还有一些可能性包括：
 
-- Using them as flood gates to block water or lava.
-- Using them as flood gates to unleash water or lava on unsuspecting players.
-- Luring enemies into a pit with a bridge floor, then releasing the enemies when an unsuspecting player is nearby.
-- Function as a trap door to catch unsuspecting players.
-- Toggle a part of a house's floorboards to hide things underneath.
-- Switch a sky light on and off.
-- Suffocating unsuspecting intruders or hostile mobs.
-- Some other clever use that will blow all of our minds.
+- 作为水闸阻挡水或熔岩。
+- 作为水闸向毫无防备的玩家释放水或熔岩。
+- 将敌人引诱到带有桥梁地板的坑中，然后当毫无防备的玩家靠近时放出敌人。
+- 作为活板门捕捉毫无防备的玩家。
+- 切换房屋地板的一部分以隐藏下方物品。
+- 开关天窗。
+- 窒息毫无防备的入侵者或敌对生物。
+- 其他一些巧妙的用法，可能会让我们大开眼界。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-redstone``,"Allow bridges to be toggled via redstone.","true"
-  ``max-length``,"Maximum length of a bridge.","30"
-  ``max-width``,"Max width either side. 5 = 11, 1 in middle, 5 on either side.","5"
-  ``blocks``,"List of blocks that a bridge can be made out of.","[minecraft:acacia_planks, minecraft:acacia_slab, minecraft:andesite_slab, minecraft:bamboo_mosaic_slab, minecraft:bamboo_planks, minecraft:bamboo_slab, minecraft:birch_planks, minecraft:birch_slab, minecraft:blackstone_slab, minecraft:brick_slab, minecraft:cherry_planks, minecraft:cherry_slab, minecraft:cobbled_deepslate_slab, minecraft:cobblestone, minecraft:cobblestone_slab, minecraft:crimson_planks, minecraft:crimson_slab, minecraft:cut_copper_slab, minecraft:cut_red_sandstone_slab, minecraft:cut_sandstone_slab, minecraft:dark_oak_planks, minecraft:dark_oak_slab, minecraft:dark_prismarine_slab, minecraft:deepslate_brick_slab, minecraft:deepslate_tile_slab, minecraft:diorite_slab, minecraft:end_stone_brick_slab, minecraft:exposed_cut_copper_slab, minecraft:glass, minecraft:granite_slab, minecraft:jungle_planks, minecraft:jungle_slab, minecraft:mangrove_planks, minecraft:mangrove_slab, minecraft:mossy_cobblestone_slab, minecraft:mossy_stone_brick_slab, minecraft:mud_brick_slab, minecraft:nether_brick_slab, minecraft:oak_planks, minecraft:oak_slab, minecraft:oxidized_cut_copper_slab, minecraft:pale_oak_planks, minecraft:pale_oak_slab, minecraft:petrified_oak_slab, minecraft:polished_andesite_slab, minecraft:polished_blackstone_brick_slab, minecraft:polished_blackstone_slab, minecraft:polished_deepslate_slab, minecraft:polished_diorite_slab, minecraft:polished_granite_slab, minecraft:polished_tuff_slab, minecraft:prismarine_brick_slab, minecraft:prismarine_slab, minecraft:purpur_slab, minecraft:quartz_slab, minecraft:red_nether_brick_slab, minecraft:red_sandstone_slab, minecraft:resin_brick_slab, minecraft:sandstone_slab, minecraft:smooth_quartz_slab, minecraft:smooth_red_sandstone_slab, minecraft:smooth_sandstone_slab, minecraft:smooth_stone_slab, minecraft:spruce_planks, minecraft:spruce_slab, minecraft:stone_brick_slab, minecraft:stone_slab, minecraft:tuff_brick_slab, minecraft:tuff_slab, minecraft:warped_planks, minecraft:warped_slab, minecraft:waxed_cut_copper_slab, minecraft:waxed_exposed_cut_copper_slab, minecraft:waxed_oxidized_cut_copper_slab, minecraft:waxed_weathered_cut_copper_slab, minecraft:weathered_cut_copper_slab]"
+  ``allow-redstone``,"允许桥梁通过红石切换。","true"
+  ``max-length``,"桥梁的最大长度。","30"
+  ``max-width``,"单侧最大宽度。5 表示总宽 11（中间1 + 两侧各5）。","5"
+  ``blocks``,"允许用于建造桥梁的方块列表。","[minecraft:acacia_planks, ... 此处省略以节省篇幅]"
 
-Permissions
+权限 Permissions
 ===========
 
 +-----------------------------------+----------------------------------------------------------+
-|  Permission Node                  |  Effect                                                  |
+|  权限节点 Permission Node         |  效果 Effect                                             |
 +===================================+==========================================================+
-|  craftbook.bridge.create          |  Allows the creation of bridges.                         |
+|  craftbook.bridge.create          |  允许创建桥梁。                                           |
 +-----------------------------------+----------------------------------------------------------+
-|  craftbook.bridge.create.infinite |  Allows the creation of bridges with infinite stock.     |
+|  craftbook.bridge.create.infinite |  允许创建无限库存的桥梁。                                 |
 +-----------------------------------+----------------------------------------------------------+
-|  craftbook.bridge.use             |  Allows the usage of bridges.                            |
+|  craftbook.bridge.use             |  允许使用桥梁。                                           |
 +-----------------------------------+----------------------------------------------------------+
-|  craftbook.bridge.restock         |  Allows the user to restock bridges.                     |
+|  craftbook.bridge.restock         |  允许为桥梁补货。                                         |
 +-----------------------------------+----------------------------------------------------------+

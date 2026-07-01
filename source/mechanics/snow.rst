@@ -1,115 +1,116 @@
 ====
-Snow
+雪 Snow
 ====
 
-The **Snow** mechanic adds a few new features to the snow block, and weather in snowy regions.
+**雪（Snow）** 机制为雪方块和雪地生物群系的天气增添了一些新特性。
 
-Features
+功能 Features
 ========
 
-Piling
+堆积 Piling
 ------
 
-The main feature of the Snow mechanic is the addition of snow piling. Snow piling allows snow to pile up higher than a single layer, causing snow to create more of a gameplay obstacle.
+雪机制的主要功能是增加了**积雪堆积（snow piling）**。积雪堆积允许雪堆得比单层更高，使雪成为一种更具游戏性的障碍物。
 
-By default, snow will only pile up to the point where it is a single block tall.
+默认情况下，雪只会堆积到一格高的程度。
+译注：此功能可能与AeternumSeasons此类季节插件/模组冲突。
 
-High Piling
+高堆积 High Piling
 ~~~~~~~~~~~
 
-High piling allows the snow piles to keep piling up beyond one block tall. This number can still be limited in the configuration to prevent crazy high snow piles.
+高堆积允许雪堆超过一格高度继续堆积。此数量仍可在配置中限制，以防止雪堆过高。
 
-Trampling
+踩踏 Trampling
 ---------
 
-The trampling feature allows the player to trample snow by walking over it, causing it to slowly lower in height.
+踩踏功能允许玩家走过雪地时将其踩踏，使雪堆高度逐渐降低。
 
-Jump Trampling
+跳跃踩踏 Jump Trampling
 ~~~~~~~~~~~~~~
 
-Jump trampling is a modified version of the trample feature, that requires the player to be jumping or landing on the snow. This behaves similarly to crop trampling.
+跳跃踩踏是踩踏功能的改进版本，要求玩家必须在雪上跳跃或落地才能触发踩踏。其行为与践踏农作物类似。
 
-Partial Trampling
+部分踩踏 Partial Trampling
 ~~~~~~~~~~~~~~~~~
 
-Partial trampling adds a further restriction to what snow can be trampled, by not allowing the bottom layer of snow to be trampled. This means that trampling snow will not get rid of the vanilla Minecraft layer of snow.
+部分踩踏对可被踩踏的雪增加了进一步限制——不允许踩踏最底层的雪。这意味着踩踏雪不会消除 Minecraft 原版的雪层。
 
-Slowdown
+减速 Slowdown
 --------
 
-The slowdown feature causes the player to receive a temporary slowness effect when they walk through piles of snow. This effect becomes stronger when the snow is deeper.
+减速功能使玩家走过雪堆时获得暂时的缓慢效果。雪越深，效果越强。
 
-Snowball Placement
+雪球放置 Snowball Placement
 ------------------
 
-The snowball placement feature allows snowballs to create snow where they land.
+雪球放置功能允许雪球在落点生成雪。
 
 .. note::
 
-    Due to poor ray tracing accuracy of the Minecraft server, the snow may not always appear exactly where you expect it to.
+    由于 Minecraft 服务端的射线追踪精度不足，雪可能不会总是出现在你预期的位置。
 
-Melt
+融化 Melt
 ----
 
-The melt feature causes snow to melt in warmer areas when it's not snowing.
+融化功能使雪在不下雪时于较温暖的区域融化。
 
-Partial Melt
+部分融化 Partial Melt
 ~~~~~~~~~~~~
 
-Partial melt adds a further restriction to what snow can melt, similar to Partial Trampling. This prevents the bottom layer of the snow from melting, allowing piled snow to slowly disappear after snowfall has ended.
+部分融化和部分踩踏类似，对可融化的雪增加了进一步限制。这会防止最底层的雪融化，使堆积的雪在降雪结束后逐渐消失。
 
 .. note::
 
-    This is most similar to vanilla Minecraft behaviour, and retains a layer of snow on mountains and snowy terrain. All snow will still melt in hot climates such as deserts or jungles.
+    这与 Minecraft 原版行为最为接近，会在山地和雪地地形上保留一层雪。但在沙漠或丛林等炎热气候中，所有雪仍会融化。
 
-Dispersion
+扩散 Dispersion
 ----------
 
-Dispersion is the most complex and interesting feature of the Snow mechanic. This feature adds realistic snow physics simulation to the game, causing snow to flow down mountains similar to how it would behave in real life.
+扩散是雪机制中最复杂、最有趣的功能。此功能为游戏增加了逼真的雪物理模拟，使雪像现实生活中的行为一样沿山坡流下。
 
-Snow with dispersion enabled allows for events such as:
+启用扩散功能后，可以实现以下效果：
 
-* Houses being snowed in
-* Snow flowing into the mouths of caves
-* Avalanches
+* 房屋被雪封住
+* 雪流入洞穴入口
+* 雪崩
 
 .. note::
 
-    Due to the large number of block changes this produces, it's not recommended for use on high-traffic servers. This feature may also cause performance issues when the duration of snowfall has been modified beyond vanilla values.
+    由于此功能会产生大量方块变化，不建议在高流量服务器上使用。当降雪持续时间被修改为超出原版值时，此功能也可能导致性能问题。
 
 .. image:: /images/snow/dispersion.png
     :width: 600
-    :alt: Dispersion mode of the snow mechanic
+    :alt: 雪机制的扩散模式
     :align: center
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``piling``,"Enables the piling feature of the Snow mechanic.","false"
-  ``trample``,"Enables the trampling feature of the Snow mechanic.","false"
-  ``partial-trample-only``,"If trampling is enabled, only trample it down to the smallest snow.","false"
-  ``jump-trample``,"Require jumping to trample snow.","false"
-  ``place-snowball``,"Allow snowballs to create snow when they land.","false"
-  ``slowdown``,"Slows down entities as they walk through thick snow.","false"
-  ``dispersion``,"Enable realistic snow dispersion.","false"
-  ``high-piling``,"Allow piling above the 1 block height.","false"
-  ``max-pile-height``,"The maximum piling height of high piling snow.","3"
-  ``replaceable-blocks``,"A list of blocks that can be replaced by snow dispersion.","[minecraft:dead_bush, minecraft:short_grass, minecraft:fire, minecraft:fern]"
-  ``dispersion-tick-speed``,"The speed at which dispersion actions are run","20"
-  ``freeze-water``,"Should snow freeze water?","false"
-  ``melt-in-sunlight``,"Enables snow to melt in sunlight.","false"
-  ``partial-melt-only``,"If melt in sunlight is enabled, only melt it down to the smallest snow similar to vanilla MC.","true"
+  ``piling``,"启用雪机制的堆积功能。","false"
+  ``trample``,"启用雪机制的踩踏功能。","false"
+  ``partial-trample-only``,"如果启用了踩踏，只踩踏到最小雪层。","false"
+  ``jump-trample``,"需要跳跃才能踩踏雪。","false"
+  ``place-snowball``,"允许雪球在落点生成雪。","false"
+  ``slowdown``,"使实体在厚雪中行走时减速。","false"
+  ``dispersion``,"启用逼真的雪扩散效果。","false"
+  ``high-piling``,"允许雪堆积超过1格高度。","false"
+  ``max-pile-height``,"高堆积模式下的最大堆积高度。","3"
+  ``replaceable-blocks``,"可被雪扩散替换的方块列表。","[minecraft:dead_bush, minecraft:short_grass, minecraft:fire, minecraft:fern]"
+  ``dispersion-tick-speed``,"扩散动作的执行速度（刻数）","20"
+  ``freeze-water``,"雪是否冻结水？","false"
+  ``melt-in-sunlight``,"启用雪在阳光下融化。","false"
+  ``partial-melt-only``,"如果启用了阳光下融化，只融化到最小雪层（类似原版）。","true"
 
-Permissions
+权限 Permissions
 ===========
 
 ====================== ==============================================
-Permission Node        Effect
+权限节点 Permission Node  效果 Effect
 ====================== ==============================================
-craftbook.snow.place   Allows the player to place snow with snowballs
-craftbook.snow.trample Allows the player to trample snow
+craftbook.snow.place   允许玩家用雪球放置雪
+craftbook.snow.trample 允许玩家踩踏雪
 ====================== ==============================================

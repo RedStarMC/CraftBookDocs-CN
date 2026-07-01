@@ -1,92 +1,94 @@
 ====
-Gate
+栅栏门 Gate
 ====
 
-The **Gate** mechanic allows you to create gates of arbitrary shapes and sizes that can be toggled on and off.
+**栅栏门（Gate）** 机制允许你创建任意形状和大小的栅栏门，并可切换其开启/关闭状态。
 
-They can be toggled using two different methods:
+可以通过以下两种方式进行切换：
 
-* Right clicking the sign
-* Powering the sign with redstone
+* 右键点击告示牌
+* 用红石给告示牌充能
 
-When toggled off, gates leave the top row of fences intact as so it knows where to restore the blocks.
+关闭时，栅栏门会保留最顶部的栅栏行，以便知道在何处恢复方块。
 
-Construction
+译注：就像Minecraft官方《红石指南》所给出的中世纪城闸门那样
+
+建造方法
 ============
 
-Gates consist of two parts:
+栅栏门由两部分组成：
 
-- Stacked fence blocks make up the gate. To stack fence blocks, place fences on top of each other. Repeat for each row. Make sure the top of the gate is covered. The list of usable blocks can be changed in the configuration file.
-- A nearby sign with ``[Gate]`` on the second line.
+- 堆叠的栅栏方块构成门体。要堆叠栅栏方块，只需将栅栏逐层放置即可。每行重复此操作。确保门的顶部被覆盖。可用方块列表可在配置文件中更改。
+- 附近第二行为 ``[Gate]`` 的告示牌。
 
-Redstone support
+红石支持
 ----------------
 
-Gates support redstone: just put a redstone current next to the sign.
+栅栏门支持红石控制：只需在告示牌旁边接入红石信号即可。
 
-- An active input creates the gate.
-- An inactive input removes the gate.
+- 激活信号（有信号）—— 生成栅栏门。
+- 非激活信号（无信号）—— 移除栅栏门。
 
-Because gate signs work with an area effect (looking for fences), they may trigger adjacent gates accidentally. An alternative is to use the [DGate] sign which looks at most one block away and two blocks below for gates to open.
+由于栅栏门告示牌是通过区域效果（寻找栅栏）工作的，它们可能会意外触发相邻的栅栏门。另一种选择是使用 ``[DGate]`` 告示牌，它最多只查找告示牌外一格和下方两格范围内的栅栏门来开启。
 
-Restocking
+补货 Restocking
 ----------
 
-By default CraftBook is designed to prevent duplicating blocks through its mechanisms. This means that if you use a gate, the blocks have to come from somewhere. CraftBook stores these blocks within a hidden inventory on the signs themselves. If there aren't enough blocks inside this inventory however, the gate will need to be restocked.
+默认情况下，CraftBook 设计为防止通过其机制复制方块。这意味着如果你使用栅栏门，方块必须来自某个来源。CraftBook 会将这些方块存储在告示牌自身的隐藏库存中。但如果库存中的方块不足，则需要为栅栏门补货。
 
-To restock a gate, simply right click the sign with the blocks you want to restock it with. The gate will then be restocked with the blocks you have provided. If two signs are placed on directly opposite sides of the same block, they will share an inventory. This allows for easily keeping inventory between both sides of a gate.
+要补货，只需手持要补充的方块右键点击告示牌即可。栅栏门将使用你提供的方块进行补货。如果两块告示牌放置在同一个方块的相对两侧，它们将共享一个库存。这样可以方便地保持栅栏门两边的库存一致。
 
-Infinite Gates
+无限栅栏门 Infinite Gates
 ~~~~~~~~~~~~~~
 
-You can also create gates with an infinite stockpile by entering ``infinite`` on the first line of the sign. This will automatically disappear on first usage, storing infinite blocks.
+你也可以通过在告示牌第一行输入 ``infinite`` 来创建无限库存的栅栏门。这会在首次使用后自动消失，并存储无限数量的方块。
 
-Uses
+用途 Uses
 ====
 
-Gates can be used as:
+栅栏门可以用作：
 
-- Flood gates to block water or lava.
-- Gates to castles or doors.
-- Trapping unfortunate creatures or players in an area
-- Some other clever use that will blow all of our minds.
+- 水闸阻挡水或熔岩。
+- 城堡门或大门。
+- 将不幸的生物或玩家困在某个区域。
+- 其他一些巧妙的用法，可能会让我们大开眼界。
 
-Castle gate example
+城堡门示例 Castle gate example
 -------------------
 
-Gates are often used for castles, they have a nice medieval look. Below is an example of a castle gate.
+栅栏门常用于城堡，具有不错的中世纪风格。以下是一个城堡门的示例。
 
-- Make a hole in the wall that is 1 higher and 2 wider than the resulting walk-through area
-- Fill the highest row with solid blocks (probably stone). This is needed for a gate for function.
-- Fill the space below with fences.
-- Add solid blocks (stone again) in front of the gate, as shown on the image.
-- Add the gate signs to both sides of the gate (left and right) and possibly also on the outside.
+- 在墙上开一个洞，比最终通行区域高1格、宽2格。
+- 最高一行用实心方块填充（可能是石头）。这是栅栏门正常运作所必需的。
+- 下方空间填充栅栏。
+- 在栅栏门前放置实心方块（再次使用石头），如图所示。
+- 在栅栏门的两侧（左侧和右侧）以及可能的外侧添加栅栏门告示牌。
 
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-redstone``,"Allows the gate mechanic to be toggled via redstone.","true"
-  ``max-columns``,"The maximum number of columns that a gate can toggle. -1 for no limit.","14"
-  ``blocks``,"The list of blocks that a gate can use.","[minecraft:acacia_fence, minecraft:bamboo_fence, minecraft:birch_fence, minecraft:cherry_fence, minecraft:crimson_fence, minecraft:dark_oak_fence, minecraft:glass_pane, minecraft:iron_bars, minecraft:jungle_fence, minecraft:mangrove_fence, minecraft:nether_brick_fence, minecraft:oak_fence, minecraft:pale_oak_fence, minecraft:spruce_fence, minecraft:warped_fence]"
-  ``max-column-height``,"The max height of a column.","12"
-  ``search-radius``,"The radius around the sign the gate checks for fences in. Note: This is doubled upwards.","3"
+  ``allow-redstone``,"允许栅栏门通过红石切换。","true"
+  ``max-columns``,"栅栏门可切换的最大列数。-1 表示无限制。","14"
+  ``blocks``,"栅栏门可使用的方块列表。","[minecraft:acacia_fence, minecraft:bamboo_fence, minecraft:birch_fence, minecraft:cherry_fence, minecraft:crimson_fence, minecraft:dark_oak_fence, minecraft:glass_pane, minecraft:iron_bars, minecraft:jungle_fence, minecraft:mangrove_fence, minecraft:nether_brick_fence, minecraft:oak_fence, minecraft:pale_oak_fence, minecraft:spruce_fence, minecraft:warped_fence]"
+  ``max-column-height``,"单列最大高度。","12"
+  ``search-radius``,"告示牌周围检查栅栏的半径。注意：向上会翻倍。","3"
 
-Permissions
+权限 Permissions
 ===========
 
 +---------------------------------+--------------------------------------------------------+
-|  Permission Node                |  Effect                                                |
+|  权限节点 Permission Node       |  效果 Effect                                           |
 +=================================+========================================================+
-|  craftbook.gate.create          |  Allows the creation of gates.                         |
+|  craftbook.gate.create          |  允许创建栅栏门。                                      |
 +---------------------------------+--------------------------------------------------------+
-|  craftbook.gate.create.infinite |  Allows the creation of gates with infinite stock.     |
+|  craftbook.gate.create.infinite |  允许创建无限库存的栅栏门。                            |
 +---------------------------------+--------------------------------------------------------+
-|  craftbook.gate.use             |  Allows the usage of gates.                            |
+|  craftbook.gate.use             |  允许使用栅栏门。                                      |
 +---------------------------------+--------------------------------------------------------+
-|  craftbook.gate.restock         |  Allows the user to restock gates.                     |
+|  craftbook.gate.restock         |  允许为栅栏门补货。                                    |
 +---------------------------------+--------------------------------------------------------+

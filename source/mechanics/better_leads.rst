@@ -1,70 +1,70 @@
 ============
-Better Leads
+更好的栓绳 Better Leads
 ============
 
-The **Better Leads** mechanic extends the capabilities of the Minecraft Leads (Leashes) through a few additional features.
+**更好的栓绳（Better Leads）** 机制通过一些额外功能扩展了 Minecraft 栓绳（Leads）的能力。
 
-Allowed Mobs
+允许的生物 Allowed Mobs
 ============
 
-**Allowed Mobs** is a feature that allows you to specify extra mobs to be leash-able; for example Zombies.
+**允许的生物（Allowed Mobs）** 功能允许你指定额外的生物可以被拴绳牵引，例如僵尸。
 
 .. note::
 
-  Due to Minecraft bugs, some mobs may have graphical oddities with leashing.
+  由于 Minecraft 的 Bug，某些怪物在用绳索拴住时，其外观可能会出现异常。
 
-Stop Target
+停止攻击目标 Stop Target
 ===========
 
-**Stop Target** stops the mobs that are leashed by the player attacking the player.
+**停止攻击目标（Stop Target）** 功能会阻止被玩家拴绳牵着的生物攻击该玩家。
 
-This prevents players from getting attacked by mobs they have leashed. The mobs will still attack other players.
+这可以防止玩家被自己牵着的生物攻击。但这些生物仍然会攻击其他玩家。
 
-Mob Repel
+生物驱散 Mob Repel
 =========
 
-**Mob Repel** stops hostile mobs targeting players that are holding mobs of the same type on a leash.
+**生物驱散（Mob Repel）** 功能会阻止敌对生物攻击那些正牵着同种生物（拴绳上）的玩家。
 
-For example, if a player has leashed a zombie, zombies will no longer that player. Zombies will still attack other players.
+例如，如果玩家牵着一只僵尸，那么其他僵尸将不再攻击该玩家。但僵尸仍会攻击其他玩家。
 
-Hitch Persist
+持久拴柱 Hitch Persist
 =============
 
-**Hitch Persist** is a feature that allows for the creation of communal hitching posts. When the hitch is hit, only the leads attached pop off, the actual hitch is kept on the fence.
+**持久拴住（Hitch Persist）** 功能允许创建公共拴绳柱。当拴绳柱被击打时，只有自己连接的缰绳会脱落，而拴绳柱本身会保留在栅栏上。
 
-Owner Hitching
+栓绳主人 Owner Hitching
 ==============
 
-**Owner Hitching** only allows the owner of tamed animals to remove the leash hitch. It is recommended to use this in tandem with Hitch Persist but not required.
+**栓绳主人（Owner Hitching）** 功能只允许已驯服动物的主人移除缰绳拴绳。建议与拴柱持久配合使用，但非必须。
 
-With this feature enabled, if a player tames a horse or wolf and hitches it to a fence, and someone else were to come along and do the same, only the mobs hitched by the player breaking the hitch would be unleashed.
+启用此功能后，如果一名玩家驯服了一匹马或狼并将其拴在栅栏上，而另一名玩家后来也做了同样操作，则只有打破拴绳的玩家所拴的生物会被解放。
 
-Permissions
+权限 Permissions
 ===========
 
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
-|  Permission Node                              |  Effect                                                                                              |
+|  权限节点 Permission Node                     |  效果 Effect                                                                                         |
 +===============================================+======================================================================================================+
-|  craftbook.betterleads.leash                  |  Allows leashing of additional mobs.                                                                 |
+|  craftbook.betterleads.leash                  |  允许拴绳牵引额外的生物。                                                                            |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
-|  craftbook.betterleads.leash.mob_type         |  Allows filtering leashing by specific mobs.                                                         |
+|  craftbook.betterleads.leash.mob_type         |  允许按特定生物类型过滤拴绳权限。                                                                    |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
-|  craftbook.betterleads.ignore-target          |  Stops mobs on the leads targeting the player. (Stop Target)                                         |
+|  craftbook.betterleads.ignore-target          |  阻止被拴绳牵着的生物攻击玩家（即停止攻击目标功能）。                                                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
-|  craftbook.betterleads.repel-mobs             |  Allows the player to use Mob Repel.                                                                 |
+|  craftbook.betterleads.repel-mobs             |  允许玩家使用生物驱散功能。                                                                          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
-|  craftbook.betterleads.owner-break.bypass     |  Allows a player to bypass Owner Hitching.                                                           |
+|  craftbook.betterleads.owner-break.bypass     |  允许玩家绕过所有者拴绳限制。                                                                        |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``stop-mob-target``,"Stop hostile mobs targeting you if you are holding them on a leash.","false"
-  ``owner-unleash-only``,"Only allow the owner of tameable entities to unleash them from a leash hitch.","false"
-  ``hitch-persists``,"Stop leash hitches breaking when no entities are attached. This allows for a public horse hitch or similar.","false"
-  ``mob-repel``,"If you have a mob tethered to you, mobs of that type will not target you.","false"
-  ``allowed-mobs``,"The list of mobs that can be tethered with a lead.","[minecraft:zombie, minecraft:spider]"
+  ``stop-mob-target``,"阻止敌对生物攻击牵着它们的玩家。","false"
+  ``owner-unleash-only``,"只允许可驯服实体的所有者将其从拴绳柱上解开。","false"
+  ``hitch-persists``,"当没有实体连接时，拴绳柱不破裂。这允许创建公共拴马桩等。","false"
+  ``mob-repel``,"如果你牵着某类生物，同类型的生物不会攻击你。","false"
+  ``allowed-mobs``,"可以用拴绳牵引的生物列表。","[minecraft:zombie, minecraft:spider]"

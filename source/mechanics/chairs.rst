@@ -1,58 +1,57 @@
 ======
-Chairs
+椅子 Chairs
 ======
 
-The **Chairs** mechanic allows players to sit on blocks, such as stairs.
+**椅子（Chairs）** 机制允许玩家坐在方块上，例如楼梯。
 
-Construction
+建造方法
 ============
 
-A chair is any block that is listed in the configuration, usually stair blocks. There must be a block underneath the chair block and a space above it for it to count.
+椅子是指在配置中列出的任何方块，通常是楼梯方块。椅子方块下方必须有一个方块，上方必须有空间才能生效。
 
-Sign Requirement
+告示牌要求 Sign Requirement
 ~~~~~~~~~~~~~~~~
 
-It is possible to require signs to be attached to the chairs in the config. When this is enabled, a sign block must be attached to the chair in
-some regard. If this is a chair made up of multiple blocks, only a single sign is required on the whole structure.
+可以在配置中要求椅子必须附着告示牌。启用此功能后，椅子必须附着有告示牌方块。如果椅子由多个方块组成，整个结构只需一个告示牌即可。
 
 .. note::
 
-    For performance reasons, a ``max-sign-distance`` configuration limit is in place to prevent players from creating lag with giant chairs.
+    出于性能考虑，存在 ``max-sign-distance`` 配置限制，以防止玩家用巨型椅子造成延迟。
 
-Usage
+使用方法
 =====
 
-Right click a block that is defined as a chair to sit on it. A message will be shown if there is no block beneath the chair, and the player will not be allowed to sit.
+右键点击被定义为椅子的方块即可坐下。如果椅子下方没有方块，会显示提示消息，且玩家不会被允许坐下。
 
-Healing
+治疗 Healing
 ~~~~~~~
 
-If enabled in the config, it is possible to have chairs slowly heal the player at a configurable rate. The player's exhaustion level can also lowered.
+如果配置中启用，椅子可以以可配置的速率缓慢治疗玩家。玩家的疲劳值（exhaustion level）也可以降低。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``allow-holding-blocks``,"Allow players to sit in chairs when holding blocks.","false"
-  ``allow-sneaking``,"Allow players to sit in chairs while sneaking.","false"
-  ``regen-health``,"Regenerate health passively when seated.","true"
-  ``lower-exhaustion``,"Lower the player's exhaustion level when seated.","true"
-  ``regen-health-amount``,"The amount of health regenerated passively. (Can be decimal)","1.0"
-  ``blocks``,"A list of blocks that can be sat on.","[minecraft:acacia_stairs, minecraft:andesite_stairs, minecraft:bamboo_mosaic_stairs, minecraft:bamboo_stairs, minecraft:birch_stairs, minecraft:blackstone_stairs, minecraft:brick_stairs, minecraft:cherry_stairs, minecraft:cobbled_deepslate_stairs, minecraft:cobblestone_stairs, minecraft:crimson_stairs, minecraft:cut_copper_stairs, minecraft:dark_oak_stairs, minecraft:dark_prismarine_stairs, minecraft:deepslate_brick_stairs, minecraft:deepslate_tile_stairs, minecraft:diorite_stairs, minecraft:end_stone_brick_stairs, minecraft:exposed_cut_copper_stairs, minecraft:granite_stairs, minecraft:jungle_stairs, minecraft:mangrove_stairs, minecraft:mossy_cobblestone_stairs, minecraft:mossy_stone_brick_stairs, minecraft:mud_brick_stairs, minecraft:nether_brick_stairs, minecraft:oak_stairs, minecraft:oxidized_cut_copper_stairs, minecraft:pale_oak_stairs, minecraft:polished_andesite_stairs, minecraft:polished_blackstone_brick_stairs, minecraft:polished_blackstone_stairs, minecraft:polished_deepslate_stairs, minecraft:polished_diorite_stairs, minecraft:polished_granite_stairs, minecraft:polished_tuff_stairs, minecraft:prismarine_brick_stairs, minecraft:prismarine_stairs, minecraft:purpur_stairs, minecraft:quartz_stairs, minecraft:red_nether_brick_stairs, minecraft:red_sandstone_stairs, minecraft:resin_brick_stairs, minecraft:sandstone_stairs, minecraft:smooth_quartz_stairs, minecraft:smooth_red_sandstone_stairs, minecraft:smooth_sandstone_stairs, minecraft:spruce_stairs, minecraft:stone_brick_stairs, minecraft:stone_stairs, minecraft:tuff_brick_stairs, minecraft:tuff_stairs, minecraft:warped_stairs, minecraft:waxed_cut_copper_stairs, minecraft:waxed_exposed_cut_copper_stairs, minecraft:waxed_oxidized_cut_copper_stairs, minecraft:waxed_weathered_cut_copper_stairs, minecraft:weathered_cut_copper_stairs]"
-  ``face-correct-direction``,"When the player sits, automatically face them the direction of the chair. (If possible)","true"
-  ``require-sign``,"Require a sign to be attached to the chair in order to work!","false"
-  ``max-sign-distance``,"The maximum distance between the click point and the sign. (When require sign is on)","3"
-  ``max-click-radius``,"The maximum distance the player can be from the sign.","5"
-  ``exit-to-last-position``,"Teleport players to their last position when they exit the chair.","false"
+  ``allow-holding-blocks``,"允许玩家在手持方块时坐在椅子上。","false"
+  ``allow-sneaking``,"允许玩家在潜行时坐在椅子上。","false"
+  ``regen-health``,"坐下时被动恢复生命值。","true"
+  ``lower-exhaustion``,"坐下时降低玩家的疲劳值。","true"
+  ``regen-health-amount``,"被动恢复的生命值数量（可为小数）。","1.0"
+  ``blocks``,"可以坐上去的方块列表。","[minecraft:acacia_stairs, ... 此处省略以节省篇幅]"
+  ``face-correct-direction``,"玩家坐下时，自动面向椅子的方向（如果可能）。","true"
+  ``require-sign``,"需要椅子附着告示牌才能工作！","false"
+  ``max-sign-distance``,"点击点与告示牌之间的最大距离（当需要告示牌时）。","3"
+  ``max-click-radius``,"玩家与告示牌之间的最大交互距离。","5"
+  ``exit-to-last-position``,"玩家离开椅子时传送到他们最后的位置。","false"
 
-Permissions
+权限 Permissions
 ===========
 
 ==================== =================================
-Node                 Description
+权限节点 Permission Node  描述 Description
 ==================== =================================
-craftbook.chairs.use Allows the user to sit in chairs.
+craftbook.chairs.use 允许玩家坐在椅子上。
 ==================== =================================
