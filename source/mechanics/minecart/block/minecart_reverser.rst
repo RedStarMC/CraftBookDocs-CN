@@ -1,51 +1,51 @@
 =================
-Minecart Reverser
+矿车反转器 Minecart Reverser
 =================
 
-The **Minecart Reverser** mechanic causes a minecart to reverse when it travels over the configured block.
+**矿车反转器（Minecart Reverser）** 机制使矿车在驶过配置的方块时反转方向。
 
-An example use case is to put reverse blocks on two sides of a track to have minecarts alternate directions between the two blocks.
+一个典型用例是在铁轨的两端各放置一个反转方块，使矿车在这两个方块之间来回交替方向行驶。
 
-Redstone Activation
+红石激活 Redstone Activation
 ===================
 
-Reversers can be turned on and off with redstone. If no redstone wire is connected, it'll activate.
-However, when redstone is connected to either the rail block, the mechanic block, or the sign, an on signal is required for the reverser to activate.
+反转器可以通过红石信号开启和关闭。如果没有连接红石线，它将保持激活状态。
+然而，当红石连接到铁轨方块、基座方块或告示牌时，需要红石信号为“开”才能激活反转器。
 
-Directed Reverser
+定向反转器 Directed Reverser
 =================
 
-The **Directed Reverser** feature allows forcing minecarts to only travel a single direction along a rail.
+**定向反转器（Directed Reverser）** 功能允许强制矿车沿铁轨仅朝单一方向行驶。
 
-Minecarts that enter going the wrong way will be turned around, but minecarts that enter going the right way will not be affected.
-A Directed Reverser is created the same way as a normal Minecart Reverser, with the addition of a sign post under the block.
+进入方向错误的矿车会被掉头，但进入方向正确的矿车不会受到影响。
+定向反转器的创建方式与普通矿车反转器相同，只是在基座方块下方额外放置一个告示牌。
 
-This sign post must have ``[Reverse]`` on the second line.
+此告示牌的第二行必须为 ``[Reverse]``。
 
-The sign should be placed in the same direction you want the cart to travel. The text on the sign represents the correct entry direction.
+告示牌应朝向您希望矿车行驶的方向。告示牌上的文字代表了正确的进入方向。
 
-Video Tutorial
+视频教程 Video Tutorial
 ==============
 
-Note: This is a very old tutorial that will be updated
+注意：这是一个非常旧的教程，将进行更新
 
 .. youtube:: vKurxtsYdW4
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``block``,"The block the Cart Reverser mechanic uses.","minecraft:white_wool"
+  ``block``,"矿车反转器机制使用的方块。","minecraft:white_wool"
 
 
-Permissions
+权限 Permissions
 ===========
 
-+----------------------------------------+---------------------------------------=+
-|  Permission Node                       |  Effect                                |
-+========================================+========================================+
-|  craftbook.minecartreverser.create     |  Allows for creation of reverser signs.|
-+----------------------------------------+---------------------------------------=+
++----------------------------------------+---------------------------------------+ 
+|  权限节点 Permission Node              |  效果 Effect                          | 
++========================================+========================================+ 
+|  craftbook.minecartreverser.create     |  允许创建反转器告示牌。                | 
++----------------------------------------+---------------------------------------+

@@ -1,8 +1,8 @@
 ==================
-Minecart Mechanics
+矿车机制 Minecart Mechanics
 ==================
 
-The following mechanics are minecart related.
+以下机制与矿车相关。
 
 .. toctree::
     :maxdepth: 3

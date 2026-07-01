@@ -1,81 +1,81 @@
 ==================
-Minecart Dispenser
+矿车发射器 Minecart Dispenser
 ==================
 
-The **Minecart Dispenser** mechanic collects minecarts that travel over the configured block, and dispense new minecarts on redstone signal.
+**矿车发射器（Minecart Dispenser）** 机制收集驶过配置方块的矿车，并在红石信号触发时发射新的矿车。
 
-Construction
+建造方法
 ============
 
-To create a Minecart Dispenser, run rail over the configured mechanic block. By default, this is emerald ore. Then underneath this block, create a sign with ``[Dispenser]`` on the second line.
+要创建矿车发射器，请在配置的基座方块（默认为绿宝石矿石）上铺设铁轨。然后在此方块下方放置一个第二行为 ``[Dispenser]`` 的告示牌。
 
-Container Placement
+容器放置 Container Placement
 -------------------
 
-Containers, such as chests, can be placed either next to the rail block, the base block (emerald ore by default), or the sign block. Double chests will also work correctly here.
+容器（如箱子）可以放置在铁轨方块旁边、基座方块（默认为绿宝石矿石）旁边或告示牌方块旁边。大型箱子在此处也能正常工作。
 
-Only Collect/Dispense
+仅收集/仅发射 Only Collect/Dispense
 ---------------------
 
-It is possible to set a Dispenser sign to only allow collection or dispensing, by writing ``collect`` or ``dispense`` on the 4th line of the sign.
+通过在告示牌第四行写入 ``collect`` 或 ``dispense``，可以将发射器告示牌设置为仅允许收集或仅允许发射。
 
-Minecart Type
+矿车类型 Minecart Type
 -------------
 
-It's possible to tell the mechanic to dispense a specific type of Minecart, using the first line of the sign. Either the Entity ID of the minecart can be entered, such as ``chest_minecart``, or one of the following shorthand:
+可以使用告示牌第一行告诉机制发射特定类型的矿车。可以输入矿车的实体 ID，例如 ``chest_minecart``，或使用以下简写之一：
 
-* hopper
-* tnt
-* powered
-* storage
-* minecart
-* rideable
-* command
-* mob
+* hopper（漏斗矿车）
+* tnt（TNT矿车）
+* powered（动力矿车）
+* storage（箱子矿车）
+* minecart（普通矿车）
+* rideable（可乘坐矿车）
+* command（命令方块矿车）
+* mob（生物矿车）
 
-Infinite Mode
+无限模式 Infinite Mode
 -------------
 
-Rather than using chests to collect and dispense Minecarts into/from, infinite Minecart Dispenser mechanics can be setup too.
+除了使用箱子来收集和发射矿车外，也可以设置无限的矿车发射器机制。
 
-Simply write ``inf`` on the 3rd line of the sign. This needs elevated permissions to create, ``craftbook.minecartdispenser.infinite``, to prevent players abusing this.
+只需在告示牌第三行写上 ``inf`` 即可。这需要更高的权限才能创建（``craftbook.minecartdispenser.infinite``），以防止玩家滥用。
 
-Collection
+收集 Collection
 ==========
 
-Collection occurs when a Minecart travels over the Dispenser block, unless set to only dispense. When not in infinite mode, a container must also be available.
+当矿车驶过发射器方块时发生收集，除非设置为仅发射模式。在非无限模式下，还必须有一个可用的容器。
 
-When the collection happens, the minecart will be placed into the container (or removed in infinite mode), and any passengers will be ejected as if they left the cart.
+收集发生时，矿车会被放入容器（或在无限模式下被移除），所有乘客会被弹出，就像他们离开了矿车一样。
 
-Dispensing
+发射 Dispensing
 ==========
 
-Dispensing occurs when redstone triggers either the rail, the base block (emerald ore by default), or the sign.
+发射发生在红石触发铁轨、基座方块（默认为绿宝石矿石）或告示牌时。
 
-If not in infinite mode, a container with the relevant minecart item must be present for dispensing to take place.
+在非无限模式下，必须有一个包含相应矿车物品的容器才能进行发射。
 
-If ``check-for-carts`` is enabled, the dispenser will refuse to output more carts until any existing carts have moved on. This is mainly to prevent accidental cart spam.
+如果启用了 ``check-for-carts``，发射器在有矿车尚未离开的情况下不会发射新的矿车。这主要是为了防止意外的矿车泛滥。
 
-If ``propel-cart`` is enabled, any dispensed minecarts will be given a boost to get them started.
+如果启用了 ``propel-cart``，发射的矿车会获得一个初始加速度。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``block``,"Sets the block that is the base of the dispenser mechanic.","minecraft:emerald_ore"
-  ``check-for-carts``,"If true, the dispenser will not dispense a cart if there is already one in the dispenser's block.","true"
-  ``propel-cart``,"Propels carts when they are dispensed.","true"
+  ``block``,"设置作为发射器机制基座的方块。","minecraft:emerald_ore"
+  ``check-for-carts``,"如果为 true，当发射器方块上已有矿车时，不会发射新的矿车。","true"
+  ``propel-cart``,"发射矿车时给予初始推力。","true"
 
-Permissions
+权限 Permissions
 ===========
 
 +----------------------------------------+---------------------------------------+
-|  Permission Node                       |  Effect                               |
+|  权限节点 Permission Node              |  效果 Effect                          |
 +========================================+=======================================+
-|  craftbook.minecartdispenser.create    |  Allows for creation of Dispensers.   |
+|  craftbook.minecartdispenser.create    |  允许创建矿车发射器。                  |
 +----------------------------------------+---------------------------------------+
-|  craftbook.minecartdispenser.infinite  | Allows for creation with infinite tag |
+|  craftbook.minecartdispenser.infinite  |  允许创建带无限标志的发射器。          |
 +----------------------------------------+---------------------------------------+

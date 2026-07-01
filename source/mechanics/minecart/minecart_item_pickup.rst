@@ -1,5 +1,5 @@
 ====================
-Minecart Item Pickup
+矿车物品拾取 Minecart Item Pickup
 ====================
 
-The **Minecart Item Pickup** mechanic allows Minecarts with storage, such as chest or hopper carts, to pickup items that they run into.
+**矿车物品拾取（Minecart Item Pickup）** 机制允许带有存储功能的矿车（如箱子矿车或漏斗矿车）拾取其撞到的物品。

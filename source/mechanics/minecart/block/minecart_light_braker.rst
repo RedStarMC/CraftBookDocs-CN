@@ -1,22 +1,22 @@
 =====================
-Minecart Light Braker
+矿车轻度减速器 Minecart Light Braker
 =====================
 
-The **Minecart Light Braker** mechanic causes a minecart to lightly brake when it travels over the configured block.
+**矿车轻度减速器（Minecart Light Braker）** 机制使矿车在驶过配置的方块时轻度减速。
 
-This mechanic reduces the speed by 20%.
+此机制将速度降低 20%。
 
-Redstone Activation
+红石激活 Redstone Activation
 ===================
 
-Brakers can be turned on and off with redstone. If no redstone wire is connected, it'll activate.
-However, when redstone is connected to either the rail block, the mechanic block, or the sign, an on signal is required for the braker to activate.
+减速器可以通过红石信号开启和关闭。如果没有连接红石线，它将保持激活状态。
+然而，当红石连接到铁轨方块、基座方块或告示牌时，需要红石信号为“开”才能激活减速器。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``block``,"The block the Minecart light braker uses.","minecraft:gravel"
+  ``block``,"矿车轻度减速器使用的方块。","minecraft:gravel"

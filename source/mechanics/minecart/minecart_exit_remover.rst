@@ -1,14 +1,14 @@
 =====================
-Minecart Exit Remover
+下车移除 Minecart Exit Remover
 =====================
 
-The **Minecart Exit Remover** mechanic automatically removes minecarts when they are exited. If configured to do so, it will also place the minecart item in the inventory of the passenger, or drop it on the ground.
+**下车移除（Minecart Exit Remover）** 机制会在玩家离开矿车时自动移除矿车。如果配置为这样做，它还会将矿车物品放入乘客的物品栏中，或掉落在地上。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``give-item``,"Sets whether to give the player the item back or not.","true"
+  ``give-item``,"设置是否将矿车物品返还给玩家。","true"

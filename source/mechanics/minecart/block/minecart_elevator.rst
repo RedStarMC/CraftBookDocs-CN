@@ -1,41 +1,41 @@
 =================
-Minecart Elevator
+矿车电梯 Minecart Elevator
 =================
 
-The **Minecart Elevator** mechanic allow you to teleport minecarts between floors easily (vertically). Signs must be created in the same location but above or below in order to link floors to each other.
+**矿车电梯（Minecart Elevator）** 机制允许你轻松地在楼层之间（垂直方向）传送矿车。告示牌必须创建在同一位置但上下不同高度，以便将各层连接起来。
 
-This mechanic is very similar to the :doc:`Elevator Mechanic <../../elevator>`, which works for the player rather than minecarts.
+此机制与 :doc:`电梯机制 <../../elevator>` 非常相似，但后者是为玩家而非矿车服务的。
 
-Construction
+建造方法
 ============
 
-To create a minecart elevator you need to place a sign below the Minecart Elevator block, which is by default nether bricks. This block must have a rail above it. The values that can be on the sign are as follows:
+要创建矿车电梯，你需要在矿车电梯基座方块（默认为地狱砖）下方放置一个告示牌。此基座方块上方必须有一条铁轨。告示牌上的可填值如下：
 
-* ``[CartLift Up]`` and ``[CartLift Down]`` on the second line can be used to specify the elevator will teleport the player upwards or downwards, respectively.
-* Having just ``[CartLift]`` on the second line specifies this lift as a destination point, that other lifts can teleport to. Carts cannot travel from this point, only to.
+* 第二行的 ``[CartLift Up]`` 和 ``[CartLift Down]`` 分别用于指定电梯将矿车向上或向下传送。
+* 第二行仅使用 ``[CartLift]`` 表示此电梯为目的地，其他电梯可以传送到此。矿车不能从此点出发，只能到达。
 
-Elevators must be created so that the signs are in the same column for the teleports to connect properly.
+电梯的告示牌必须位于同一列（相同 XZ 坐标）才能正确连接传送。
 
-Redstone Activation
+红石激活 Redstone Activation
 ===================
 
-Minecart Elevators can be turned on and off with redstone. If no redstone wire is connected, it'll activate.
-However, when redstone is connected to either the rail block, the mechanic block, or the sign, an on signal is required for the elevator to activate.
+矿车电梯可以通过红石信号开启和关闭。如果没有连接红石线，它将保持激活状态。
+然而，当红石连接到铁轨方块、基座方块或告示牌时，需要红石信号为“开”才能激活电梯。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``block``,"Sets the block that is the base of the elevator mechanic.","minecraft:nether_bricks"
+  ``block``,"设置作为电梯机制基座的方块。","minecraft:nether_bricks"
 
-Permissions
+权限 Permissions
 ===========
 
 +----------------------------------------+---------------------------------------+
-|  Permission Node                       |  Effect                               |
+|  权限节点 Permission Node              |  效果 Effect                          |
 +========================================+=======================================+
-|  craftbook.minecartelevator.create     |  Allows for creation of Cart Lifts.   |
+|  craftbook.minecartelevator.create     |  允许创建矿车电梯。                    |
 +----------------------------------------+---------------------------------------+

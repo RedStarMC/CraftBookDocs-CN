@@ -1,18 +1,18 @@
 ====================
-Minecart Empty Decay
+空矿车消失 Minecart Empty Decay
 ====================
 
-The **Minecart Empty Decay** mechanic causes carts to disappear after being unoccupied for a configurable amount of time.
+**空矿车消失（Minecart Empty Decay）** 机制会使矿车在无人乘坐达到可配置的时间后消失。
 
 .. note::
 
-  This mechanic does **NOT** drop the minecart item. If you'd rather minecarts automatically break on exit, try the :doc:`minecart_exit_remover` mechanic instead.
+  此机制**不会**掉落矿车物品。如果你希望矿车在下车时自动分解，请改用 :doc:`矿车下船移除 minecart_exit_remover` 机制。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``decay-delay``,"The time in ticks that the cart will wait before decaying.","200"
+  ``decay-delay``,"矿车在消失前等待的时间（刻）。","200"

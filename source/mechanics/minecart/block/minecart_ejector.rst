@@ -1,36 +1,34 @@
 ================
-Minecart Ejector
+矿车下车器 Minecart Ejector
 ================
 
-The **Minecart Ejector** mechanic causes a minecart to eject all passengers when it travels over the configured block.
+**矿车下车器（Minecart Ejector）** 机制使矿车在驶过配置的方块时弹出所有乘客。
 
-Redstone Activation
+红石激活 Redstone Activation
 ===================
 
-Ejectors can be turned on and off with redstone. If no redstone wire is connected, it'll activate.
-However, when redstone is connected to either the rail block, the mechanic block, or the sign, an on signal is required for the ejector to activate.
+弹射器可以通过红石信号开启和关闭。如果没有连接红石线，它将保持激活状态。
+然而，当红石连接到铁轨方块、基座方块或告示牌时，需要红石信号为“开”才能激活弹射器。
 
-Exit Position
+弹出位置 Exit Position
 =============
 
-Players will be ejected as if they exited the minecart, but you can change this behavior by putting a specially crafted sign post 2 or 3 blocks under
-the track piece. This sign post must have ``[Eject]`` on the second line and face away from the direction that you want the player to be ejected to.
-Players are only ejected one block away and diagonal directions are supported.
+玩家会被弹出，就像他们正常离开矿车一样，但你可以通过在铁轨下方 2 或 3 格处放置一个特制的告示牌来改变此行为。此告示牌的第二行必须为 ``[Eject]``，并且朝向与你希望玩家被弹射的方向相反的方向。玩家只会被弹射一格远，支持斜向方向。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``block``,"The block the Cart Ejector mechanic uses.","minecraft:iron_block"
+  ``block``,"矿车下车器机制使用的方块。","minecraft:iron_block"
 
-Permissions
+权限 Permissions
 ===========
 
 +----------------------------------------+---------------------------------------+
-|  Permission Node                       |  Effect                               |
+|  权限节点 Permission Node              |  效果 Effect                          |
 +========================================+=======================================+
-|  craftbook.minecartejector.create      |  Allows for creation of Ejectors.     |
+|  craftbook.minecartejector.create      |  允许创建矿车下车器。                  |
 +----------------------------------------+---------------------------------------+

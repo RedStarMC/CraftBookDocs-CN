@@ -1,47 +1,47 @@
 ================
-Minecart Station
+矿车站台 Minecart Station
 ================
 
-The **Minecart Station** mechanic allows stopping and starting minecarts based on conditions.
+**矿车站台（Minecart Station）** 机制允许根据条件停止和启动矿车。
 
-When stations are unpowered by redstone, minecarts that pass over them will stop. When the redstone input goes high, the minecart will launch in the direction of a sign post placed 2 blocks below the rail.
+当站台未被红石充能时，经过的矿车会停下。当红石信号变为高电平（开启）时，矿车会朝着铁轨下方 2 格处告示牌所指示的方向弹射出发。
 
-Construction
+建造方法
 ============
 
-The sign must have [Station] on the second line and face away from the direction that you want the minecart to be pushed towards.
-It is not possible to have multiple minecarts over one single station block. By default, stations are created with obsidian.
+告示牌的第二行必须为 ``[Station]``，并且其朝向应与您希望推动矿车的方向相反。
+一个站台方块上不能同时停放多辆矿车。默认情况下，站台使用黑曜石建造。
 
-View the `tutorial video <http://www.youtube.com/watch?v=3YKe4OJ3mfw>`_ to learn how to use minecart stations.
+观看 `教程视频 <http://www.youtube.com/watch?v=3YKe4OJ3mfw>`_ 了解如何使用矿车站台。
 
-AutoStart
+自动启动 AutoStart
 =========
 
-Having AUTOSTART on the 3rd line of the sign allows the station to propel anyone who gets into the cart that is stopped at the station if it is powered. This also causes empty minecarts to stop at powered stations.
+在告示牌第三行写入 ``AUTOSTART`` 可以在站台被充能时，使任何进入停在站台上的矿车的玩家立即被弹射出发。同时，这也会使空矿车在充能的站台上停下。
 
-Keys
+钥匙 Keys
 ----
 
 .. note::
 
-  This is not currently implemented
+  此功能当前尚未实现
 
-The last line can have an item written in Item Syntax, that is then required for the player to be holding in order for the station to propel the player. This can be used for a ticket system as it supports names, lores and all other metadata supported by the Item Syntax.
+最后一行可以使用物品语法编写一个物品，玩家需要持有该物品才能被站台弹射。这可以用于票务系统，因为它支持名称、描述以及物品语法支持的所有其他元数据。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``block``,"Sets the block that is the base of the station mechanic.","minecraft:obsidian"
+  ``block``,"设置作为站台机制基座的方块。","minecraft:obsidian"
 
-Permissions
+权限 Permissions
 ===========
 
 +----------------------------------------+---------------------------------------+
-|  Permission Node                       |  Effect                               |
+|  权限节点 Permission Node              |  效果 Effect                          |
 +========================================+=======================================+
-|  craftbook.minecartstation.create      |  Allows for creation of Stations.     |
+|  craftbook.minecartstation.create      |  允许创建矿车站台。                    |
 +----------------------------------------+---------------------------------------+

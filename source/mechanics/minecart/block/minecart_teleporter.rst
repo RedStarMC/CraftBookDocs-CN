@@ -1,33 +1,33 @@
 ===================
-Minecart Teleporter
+矿车传送器 Minecart Teleporter
 ===================
 
-The **Minecart Teleporter** mechanic causes a minecart to teleport to the specified coordinates upon driving over the block.
+**矿车传送器（Minecart Teleporter）** 机制使矿车在驶过配置的方块时传送到指定的坐标位置。
 
-Construction
+建造方法
 ============
 
-To create a minecart teleporter you need to place a sign below the Minecart Teleporter block, which is by default emerald block. This block must have a rail above it.
+要创建矿车传送器，你需要在矿车传送器基座方块（默认为绿宝石块）下方放置一个告示牌。此基座方块上方必须有一条铁轨。
 
-The second line of the sign should state ``[TeleCart]``, and the third line should be `x,y,z` coordinates that are comma separated. This location will be where the minecart is teleported.
+告示牌的第二行应为 ``[TeleCart]``，第三行应为以逗号分隔的 `x,y,z` 坐标。此位置即为矿车传送的目标地点。
 
-For optimal travel, this location should be either the location of a rail block, or above a rail block.
+为达到最佳传送效果，目标位置应为铁轨所在位置或铁轨上方一格的位置。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``block``,"The block the TeleCart mechanic uses.","minecraft:emerald_block"
+  ``block``,"矿车传送器机制使用的方块。","minecraft:emerald_block"
 
 
-Permissions
+权限 Permissions
 ===========
 
 +----------------------------------------+---------------------------------------+
-|  Permission Node                       |  Effect                               |
+|  权限节点 Permission Node              |  效果 Effect                          |
 +========================================+=======================================+
-|  craftbook.minecartteleporter.create   |  Allows for creation of Teleporters.  |
+|  craftbook.minecartteleporter.create   |  允许创建矿车传送器。                  |
 +----------------------------------------+---------------------------------------+
