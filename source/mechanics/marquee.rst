@@ -1,27 +1,27 @@
 =======
-Marquee
+字幕牌 Marquee
 =======
 
-The **Marquee** mechanic outputs the contents of a variable to the player that right clicks the sign.
+**字幕牌（Marquee）** 机制将变量的内容输出给右键点击告示牌的玩家。
 
-Construction
+建造方法
 ============
 
-To construct a marquee sign, simply put [Marquee] on the second line of a sign.
+要建造一个字幕牌，只需在告示牌的第二行写上 ``[Marquee]``。
 
-On the 3rd line of the sign you must enter the name of the variable you wish to display, without any %'s.
+在告示牌的第三行，你必须输入要显示的变量名称（不带任何 ``%`` 符号）。
 
-If you wish to use a namespace other than the default, you must also put the namespace on the 4th line.
+如果你想使用默认命名空间以外的命名空间，还必须将命名空间写在第四行。
 
-For example, if you wished to display the variable ``carpet`` in the ``carrot`` namespace, You'd enter ``carpet`` on the 3rd line, and ``carrot`` on the 4th.
+例如，如果你想显示 ``carrot`` 命名空间中的变量 ``carpet``，则第三行输入 ``carpet``，第四行输入 ``carrot``。
 
-Permissions
+权限 Permissions
 ===========
 
 +---------------------------+------------------------------------+
-|  Permission Node          |  Effect                            |
+|  权限节点 Permission Node |  效果 Effect                       |
 +===========================+====================================+
-|  craftbook.marquee.create |  Allows creation of Marquee signs. |
+|  craftbook.marquee.create |  允许创建字幕牌告示牌。            |
 +---------------------------+------------------------------------+
-|  craftbook.marquee.use    |  Allows usage of Marquee signs.    |
+|  craftbook.marquee.use    |  允许使用字幕牌告示牌。            |
 +---------------------------+------------------------------------+

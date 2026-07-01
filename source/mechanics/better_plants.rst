@@ -1,24 +1,23 @@
 =============
-Better Plants
+更好的植物 Better Plants
 =============
 
-The **Better Plants** mechanic is a series of features that aim to enhance the way plants are interacted with in the game. This is to create a more natural and interactive environment.
+**更好的植物（Better Plants）** 机制是一系列旨在增强游戏中植物交互方式的功能。目的是创造一个更自然、更具互动性的环境。
 
-Fern Farming
+蕨类种植 Fern Farming
 ============
 
-Fern Farming allows for ferns to be farmed. Small ferns grow into large ferns after a period of time, and then the top block of the large fern is
-breakable to drop another small fern. Once a large fern is broken, a small fern is put in place of the large fern.
+蕨类种植允许玩家种植蕨类植物。小型蕨类经过一段时间后会长成大型蕨类，然后大型蕨类的顶部方块可以被破坏以掉落另一个小型蕨类。一旦大型蕨类被破坏，其位置会重新放置一个小型蕨类。
 
 .. image:: /images/better_plants/fern_farming.png
     :align: center
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``fern-farming``,"Allows ferns to be farmed by breaking top half of a large fern. (And small ferns to grow)","true"
-  ``fast-random-ticks``,"Use a way of generating less random numbers, by only generating it once for all chunks, instead of one each chunk.","true"
+  ``fern-farming``,"允许通过破坏大型蕨类上半部分来种植蕨类（同时小型蕨类也能生长）。","true"
+  ``fast-random-ticks``,"使用一种减少随机数生成的方式，仅对每个区块生成一次随机数，而不是每个区块内分别生成。","true"

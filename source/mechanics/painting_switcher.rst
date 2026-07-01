@@ -1,33 +1,32 @@
 =================
-Painting Switcher
+画作切换 Painting Switcher
 =================
 
-The **Painting Switcher** mechanic allows a player to switch between paintings using the scroll wheel of their mouse.
+**画作切换（Painting Switcher）** 机制允许玩家使用鼠标滚轮在画作之间切换。
 
-Usage
+使用方法
 =====
 
-Right click on a painting to start editing. You're then able to use the scroll wheel to scroll between paintings that
-fit in the given space.
+右键点击一幅画作开始编辑。然后你可以使用鼠标滚轮在适合该空间的所有画作之间滚动切换。
 
-Scrolling forward will switch to the next painting, whilst scrolling backwards will scroll to the prior painting.
+向前滚动会切换到下一幅画作，向后滚动则会切换到上一幅画作。
 
-Once you're happy with the painting, right click it again to stop editing.
+当你对画作满意后，再次右键点击它以停止编辑。
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``modify-range``,"The maximum distance from which you can modify paintings.","5"
+  ``modify-range``,"你可以修改画作的最大距离。","5"
 
-Permissions
+权限 Permissions
 ===========
 
 +---------------------------------+---------------------------------------+
-|  Permission Node                |  Effect                               |
+|  权限节点 Permission Node       |  效果 Effect                          |
 +=================================+=======================================+
-|  craftbook.paintingswitcher.use |  Allows use of the Painting Switcher. |
+|  craftbook.paintingswitcher.use |  允许使用画作切换功能。                |
 +---------------------------------+---------------------------------------+

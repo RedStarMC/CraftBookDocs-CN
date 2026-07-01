@@ -1,35 +1,35 @@
 =============
-Redstone Fire
+红石火焰 Redstone Fire
 =============
 
-The **Redstone Fire** mechanic allows lighting and extinguishing fire on top of netherrack and soul soil using redstone.
+**红石火焰（Redstone Fire）** 机制允许使用红石在地狱岩和灵魂土上方点燃和熄灭火焰。
 
-For extra compact wiring, this mechanic allows the netherrack or soul soil to be toggled by redstone running underneath it.
+为了更紧凑的布线，此机制允许通过在地狱岩或灵魂土下方通入红石信号来切换其火焰状态。
 
 .. image:: /images/redstone_fire/redstone_fire.png
     :align: center
     :height: 200px
 
-Uses
+用途 Uses
 ====
 
-This mechanic can be used in a fair few situations, such as:
+此机制可用于多种场景，例如：
 
-* An incinerator
-* A hidden floor trap
+* 焚烧炉
+* 隐藏的地面陷阱
 
-Video Tutorial
+视频教程 Video Tutorial
 ==============
 
 .. youtube:: QKDwL7Z9CGc
 
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``enable-netherrack``,"Whether the mechanic should affect Netherrack.","true"
-  ``enable-soul-soil``,"Whether the mechanic should affect Soul Soil.","true"
+  ``enable-netherrack``,"此机制是否影响地狱岩。","true"
+  ``enable-soul-soil``,"此机制是否影响灵魂土。","true"

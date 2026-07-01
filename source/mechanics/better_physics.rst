@@ -1,22 +1,22 @@
 ==============
-Better Physics
+更好的物理 Better Physics
 ==============
 
-The **Better Physics** mechanic is a series of features that aim to enhance "physics" interactions in the game to add more dynamic gameplay.
+**更好的物理（Better Physics）** 机制是一系列旨在增强游戏中“物理”交互的功能，以增加更具动态性的游戏玩法。
 
-Falling Ladders
+掉落梯子 Falling Ladders
 ===============
 
-Falling ladders causes ladders to fall down when not supported by a block. This allows for a player to drop ropes down a drop, and break the ladders once they reach the bottom.
+掉落梯子会使梯子在下方没有方块支撑时掉落。这允许玩家向下方垂下一根绳索，并在到达底部后破坏梯子。
 
 .. image:: /images/better_physics/ladder.png
     :align: center
 
-Configuration
+配置 Configuration
 =============
 
 .. csv-table::
-  :header: Node, Comment, Default
+  :header: 节点, 说明, 默认值
   :widths: 15, 30, 10
 
-  ``falling-ladders``,"Causes ladders to fall when not held up by anything.","true"
+  ``falling-ladders``,"使梯子在没有任何支撑时掉落。","true"
