@@ -1,0 +1,44 @@
+name: Build and Push to Separate Branch
+
+on:
+  push:
+    branches:
+      - 5.0.0
+  workflow_dispatch:  # 允许手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          # 注意：.readthedocs.yaml 里写的是 3.14，但 GitHub Actions 若报错找不到 3.14，可改为 '3.11' 或 '3.12'
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build HTML with Sphinx (dirhtml)
+        run: |
+          sphinx-build -b dirhtml source build/dirhtml
+
+      - name: Create .nojekyll file
+        run: |
+          touch build/dirhtml/.nojekyll          
+
+      - name: Deploy / Push to separate branch (e.g., gh-pages)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_branch: gh-pages
+          publish_dir: ./build/dirhtml
+          # 保留历史记录（true 会保留目标分支的历史，false 会强制重置）
+          keep_files: false
